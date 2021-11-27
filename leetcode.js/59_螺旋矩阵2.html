@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /**
+ * @param {number} n
+ * @return {number[][]}
+ */
+    var generateMatrix = function (n) {
+      //初始化数组
+      let matrix = new Array(n).fill(0).map(() => new Array(n).fill(0));
+     // console.log(matrix)
+      let x = 0;
+      let y = 0;
+      let direction = [[0, 1], [1, 0], [0,-1], [-1, 0]];
+      let d = 0
+      for (let k = 1; k <= n * n; k++) {
+        console.log(k,x,y,d)
+        matrix[x][y] = k;
+        let nextX = x + direction[d][0];
+        let nextY = y + direction[d][1];
+        if (0 <= nextX && nextX < n && 0 <= nextY && nextY < n && !matrix[nextX][nextY]) {
+          x = nextX;
+          y = nextY;
+        } else {
+          d = (d+1)%4;
+          x = x + direction[d][0];
+          y = y + direction[d][1];
+        }
+      }
+      return matrix
+    };
+    //debugger
+    console.log(generateMatrix(3))
+  </script>
+</body>
+
+</html>

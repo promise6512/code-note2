@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+        //动态规划-->空间优化
+        var canPartition = function (nums) {
+            let n = nums.length
+            if (n < 2) {
+                //长度小于2 ,无法分割
+                return false;
+            }
+            let maxNum = 0;
+            let sum = nums.reduce((acc, cur) => {
+                return acc + cur;
+                maxNum = cur > maxNum ? cur : maxNum;
+            }, 0)
+            //总和为奇数
+            if (sum % 2) {
+                return false;
+            }
+            let target = sum / 2;
+            if (maxNum > target) {
+                return false;
+            }
+            let dp = new Array(target + 1).fill(false);
+            //初始化dp
+            dp[nums[0]] = true;
+            dp[0] = true;
+            for (let i = 1; i < n; i++) {
+                //0一定能取到
+                for (let j = target; j > 0; j--) {
+                    dp[j] = dp[j] || dp[j - nums[i]]
+                }
+                if (dp[target]) {
+                    return true
+                }
+            }
+            return false;
+        };
+        console.log(1)
+    </script>
+</body>
+
+</html>

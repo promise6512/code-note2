@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        left+ margin-left+border-left+padding-left+width
+        +padding-right+border-right+margin-right+right=包含块的宽度
+        水平布局
+        开启绝对定位:
+           过度约束时:
+              如果9个值都没有auto 自动调整right
+              如果有auto 调整auto
+            可设置auto  left margin-left width margin-right right
+
+            left和right默认值auto 所以不设置left和right
+            自动调整这两个值
+        垂直布局:
+          top+margin-top+padding-top+height+padding-bottom+
+          padding-bottom+ margin-bottom + bottom=包含块的高度
+        */
+        .box1{
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+            position: relative;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

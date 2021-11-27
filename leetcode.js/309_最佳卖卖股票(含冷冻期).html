@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //动态规划
+        var maxProfit = function (prices) {
+            let f0 = -prices[0]; //持有股票
+            let f1 = 0;  //卖掉了股票(即后一天会处于冷冻期)
+            let f2 = 0;  //没有股票 但是也没卖股票(即后一天不处于冷冻期)
+            for (let i = 1; i < prices.length; i++) {
+                //持有股票可能是当天买也可能是前一天买的
+                let newF0 = Math.max(f0, f2 - prices[i]);
+                //则前一天必须持有股票
+                let newF1 = f0 + prices[i];
+                //相当于没有进行任何操作
+                let newF2 = Math.max(f1, f2);
+                f0 = newF0;
+                f1 = newF1;
+                f2 = newF2;
+            }
+            return Math.max(f1, f2)
+        };
+    </script>
+</body>
+
+</html>

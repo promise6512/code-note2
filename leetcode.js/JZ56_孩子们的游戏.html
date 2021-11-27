@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function LastRemaining_Solution(n, m) {
+      // write code here
+      if (n === 0) return -1;
+      let sum = n; //小朋友数量
+      let index = -1; //每次报数被报到的小朋友
+      let perArr = new Array(n).fill(false);
+      while (sum > 1) {
+        for (let i = 0; i < m; i++) {
+          index = (index + 1) % sum;
+          while (perArr[index]) {
+            index = (index + 1) % sum;
+          }
+        }
+        perArr[index] = true
+        sum--
+      }
+      return index;
+    }
+    debugger
+    console.log(LastRemaining_Solution(5,3))
+  </script>
+</body>
+
+</html>

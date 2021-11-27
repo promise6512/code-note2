@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var containsNearbyAlmostDuplicate = function (nums, k, t) {
+      const getID = (x, w) => {
+        return Math.floor(x / w)
+      }
+      let hashMap = new Map();
+      for (let i = 0; i < nums.length; i++) {
+        let id = getID(nums[i], t + 1);
+        if (hashMap.has(id)) return true;
+        if (hashMap.has(id - 1) && Math.abs(hashMap.get(id - 1) - nums[i]) <= t) return;
+        if (hashMap.has(id + 1) && Math.abs(hashMap.get(id + 1) - nums[i]) <= t) return;
+        hashMap.set(id, nums[i]);
+
+        if (i >= k) {
+          hashMap.delete(getID(nums[i - k],t + 1));
+        }
+      }
+      return false
+    };
+    console.log(containsNearbyAlmostDuplicate([1,5,9,1,5,9],2,3))
+  </script>
+</body>
+
+</html>

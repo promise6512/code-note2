@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //class创建类
+        class Phone{
+            //构造方法 名字固定
+            constructor(brand,price){
+               this.brand = brand;
+               this.price = price;
+            }
+            //添加call方法  所添加的方法在原型中 
+            call(work){
+                alert('我可以'+work)
+            }
+        }
+
+        Huawei = new Phone('huawei',5999);
+        Huawei.call('起飞')
+        console.log(Huawei)
+
+
+
+
+    </script>
+</body>
+</html>

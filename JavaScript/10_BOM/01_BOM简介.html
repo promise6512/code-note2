@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       /* 
+          BOM
+            -浏览器对象模型
+            -BOM可以使我们通过JS来操作浏览器
+            -在BOM中为我们提供了一组对象 用来完成对浏览器的操作
+            -BOM对象
+                Window
+                    -代表的是整个浏览器的窗口 同时window也是浏览器的全局对象
+                Navigator
+                    -代表当前的浏览器的信息 通过该对象可以识别不同的浏览器
+                Location
+                    -代表浏览器的地址栏信息 通过Location可以获取地址栏信息 或者操作浏览器跳转页面
+                History
+                    -代表浏览器的历史记录 可以通过该对象来操作浏览器的记录
+                    -由于隐私的原因 该对象不能获取具体的历史记录
+                    -只能操作浏览器向前或向后翻页
+                    -而且该操作只在当次访问时有效
+                Screen
+                    -代表用户屏幕的信息栏 通过该对象可以获取用户的显示器的相关信息
+                这些对象在浏览器中都是作为window对象的属性保存
+            
+       */
+        /* 
+           Navigator
+                -代表当前的浏览器的信息 通过该对象可以识别不同的浏览器
+                -由于历史原因 Navigator对象中的大部分属性已经不能帮助我们识别浏览器
+                -一般只会使用userAgent来判断浏览器的信息
+                -userAgent是一个字符串 这个字符串中包含用来描述浏览器信息的内容
+                -不同浏览器有不同的userAgent
+            chrome的userAgent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36
+            火狐的userAgent   Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0
+                 注意:IE11不能通过userAgent来识别
+        */
+        /* 
+            如果通过userAgent不能判断 可以通过浏览器中特有的对象 来判断浏览器的信息
+            比如ActiveXObject是IE特有的
+            可以用if('ActiveXObject' in window)
+        */
+      /*  if window.ActiveXObject{
+           alert
+       } */
+
+        var ua = navigator.userAgent;
+        alert(ua)
+        if(/firefox/i.test(ua)){
+            alert('你是火狐')
+        }else if(/Chrome/i.test(ua)){
+            alert('你是Chrome')
+        }else if(/msie/){
+            alert('你是IE浏览器')
+        }
+        
+    </script>
+</head>
+<body> 
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+          scale 对元素进行缩放
+             scaleX() 水平方向缩放
+             scaleY() 垂直方向缩放
+             scale()  双方向缩放
+          transfrom-origin指定变形原点
+             默认值 中间
+        */
+        .box1{
+            width:200px;
+            height: 200px;
+            background-color: #bfa;
+            border: 1px red solid;
+            transition: 2s;
+            margin: 200px auto;
+            overflow: hidden;
+        }
+        img{
+            width: 100%;
+            transition: 0.2s;
+        }
+        .box1:hover img{
+            transform: scale(1.2);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <img src="../exercise/素材/girl.jpg">
+    </div>
+</body>
+</html>

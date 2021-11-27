@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+		   /* 
+		    强制类型转换
+			   -指将一个数据类型强制转换为其他的数据类型
+			   -类型转换主要是指，将其他数据类型转换为
+			       String Number Boolean
+		   */
+		  /* 
+		    将其他的数据类型转换为String
+			    方式一:
+			        调用被转换类型的toString()方法
+					不改变原变量的值，它会将转换的结果返回
+					注意:null和undefined没有toString()方法
+				方式二:
+					调用String()函数,并将被转换的数据传递给参数
+					对null和undefined有效
+					      对于Number和Boolean实际上就是调用toString函数
+						  但是对于null和undefined,就是直接转换为"null"和"undefined"
+			 
+		  */
+		    var a = 123;
+			console.log(typeof a);
+			console.log(a);
+			var b=a.toString();
+			console.log(typeof b)
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

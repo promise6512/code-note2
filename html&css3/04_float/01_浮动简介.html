@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /*
+        通过浮动可以使一个元素向其父元素的左侧或右侧移动
+            通过float属性设置资源元素的浮动
+               可选值：
+                  none 默认值 元素不浮动
+                  left 向左浮动
+                  right 向右浮动
+                浮动的特点:
+                    1.元素设置浮动以后，水平布局的等式便不需要强制成立
+                    2.元素设置浮动以后，元素会完全从文档流中脱离，不再占用文档流的位置
+                    3.设置浮动以后元素会向父元素的左侧或右侧移动
+                    4.浮动元素默认不会移出父元素
+                    5.浮动元素不会盖住其他元素
+                    6.浮动元素不会超过它上面的兄弟元素
+                    7.浮动元素不会盖住文字，文字会自动环绕在浮动元素的周围；
+                           所以我们可以利用浮动设置文字环绕图片的效果
+                    8.脱离文档流特点:
+                         块元素:
+                              1.块元素不独占一行
+                              2.块元素的宽度和高度默认被内容撑开
+                         行内元素:
+                              行内元素脱离文档流后，变成块元素
+                        脱离文档流后不用区分块元素和行内元素
+        */
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color:orange;
+            float:left;
+        }
+       .box3{
+        width: 100px;
+            height: 100px;
+            background-color:red;
+            float:left;
+       }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

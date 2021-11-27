@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期</title>
+    <link rel="icon" href="../favicon.ico">
+    <style>
+        .list {
+            width: 200px;
+            height: 150px;
+            background-color: skyblue;
+            overflow: auto;
+            position: absolute;
+        }
+
+        .news {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 准备好一个“容器” -->
+    <div id="test"></div>
+
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="../react_new/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script type="text/javascript" src="../react_new/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script type="text/javascript" src="../react_new/babel.min.js"></script>
+
+    <script type="text/babel">
+    /* 
+				1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
+								1.	constructor()
+								2.	getDerivedStateFromProps 
+								3.	render()
+								4.	componentDidMount() =====> 常用
+											一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息
+				2. 更新阶段: 由组件内部this.setSate()或父组件重新render触发
+								1.	getDerivedStateFromProps()
+								2.	shouldComponentUpdate()
+								3.	render()
+								4.	getSnapshotBeforeUpdate
+								5.	componentDidUpdate()
+				3. 卸载组件: 由ReactDOM.unmountComponentAtNode()触发
+								1.	componentWillUnmount()  =====> 常用
+											一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
+			*/
+        class NewList extends React.Component {
+            state = { newsArr: [] }
+            componentDidMount() {
+                setInterval(() => {
+                    let { newsArr } = this.state;
+                    let currentNews = '新闻' + (newsArr.length + 1)
+                    newsArr = [currentNews, ...newsArr];
+                    this.setState({ newsArr });
+                }, 1000)
+            }
+            getSnapshotBeforeUpdate(){
+               // console.log(this.list.scrollHeight)
+                return this.list.scrollHeight;
+            }
+            componentDidUpdate(preProps,preState,height) {
+                //console.log(this.state.scrollHeight)
+                this.list.scrollTop += this.list.scrollHeight - height
+            }
+            render() {
+                return (
+                    <div className='list' ref = {c=>this.list = c}>
+                        {
+                            this.state.newsArr.map((n,index) => {
+                                return <div className="news" key = {index}>{n}</div>
+                            })
+                        }
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<NewList />, document.getElementById('test'))
+    </script>
+</body>
+
+</html>

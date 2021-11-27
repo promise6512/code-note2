@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <script>
+         /* 
+		    正则表达式
+			   语法: 
+			      var 变量 = new RegExp('正则表达式','匹配模式');
+				在构造函数可以传递一个匹配模式作为第二个参数
+				    i  忽略大小写
+					g  全局匹配模式
+		*/
+		 var reg = new RegExp('a','i');
+	//	 console.log(typeof reg); -->object
+		 
+		 /* 
+		    正则表达式的方法:
+			   test()
+			      -使用这个方法可以检查一个字符串是否符合正则表达式的规则
+				       如果符合返回true  否则返回false
+		 */
+		var result = reg.test('A');
+		console.log(result);
+		 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var trap = function (height) {
+      if (height.length < 3) return 0;
+      let left = 0;
+      let right = height.length - 1;
+      let leftMax = height[0];
+      let rightMax = height[height.length - 1];
+      let total = 0 //雨水总量
+      //左右指针之间有空间
+      while (right - left >= 1) {
+        if (leftMax < rightMax) {
+          //如果左边柱子比较矮
+          if (height[left + 1] < leftMax) {
+            //能接下雨水
+            total += (leftMax - height[left + 1]);
+          }
+          left++;
+          //更新leftMax
+          leftMax = Math.max(leftMax,height[left]);
+        } else {
+          //如果右边柱子比较矮
+          if (height[right - 1] < rightMax) {
+            //能接下雨水
+            total += (rightMax - height[right - 1]);
+          }
+          right--;
+          //更新rightMax
+          rightMax = Math.max(rightMax,height[right]);
+        }
+      }
+      return total;
+    };
+  //  debugger
+    console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
+  </script>
+</body>
+
+</html>

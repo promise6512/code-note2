@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+        }
+        #box2{
+            width: 1px;
+            background-color: black;
+            height: 1000px;
+            position: absolute;
+            left: 800px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById('box1');
+            var btn01 = document.getElementById('btn01');
+            var btn02 = document.getElementById('btn02')
+            var timer;
+            btn01.onclick = function(){
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    oldValue = parseInt(getStyle(box1,'left'));
+                    var newValue = oldValue +19;
+                    if(newValue >= 800){
+                        clearInterval(timer);
+                        box1.style.left ='800px';
+                    }else{
+                        box1.style.left = newValue + 'px';
+                    }
+                    
+                   /*  if(newValue >= 800){
+                        clearInterval(timer);
+                    } */
+                },100)
+            } 
+            btn02.onclick = function(){
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    oldValue = parseInt(getStyle(box1,'left'));
+                    var newValue = oldValue -19;
+                    if(newValue <= 10){
+                        clearInterval(timer);
+                        box1.style.left ='10px';
+                    }else{
+                        box1.style.left = newValue + 'px';
+                    }
+                    
+                   /*  if(newValue >= 800){
+                        clearInterval(timer);
+                    } */
+                },100)
+            }  
+            function getStyle(obj,name){
+                 if(window.getComputedStyle){
+                     return getComputedStyle(obj , null)[name];
+                 }else{
+                     return obj.currentStyle[name];
+                 }
+            }     
+        }
+    </script>
+</head>
+<body>
+    <button id = "btn01">向右移动</button>
+    <button id = 'btn02'>向左移动</button>
+    <br><br> 
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

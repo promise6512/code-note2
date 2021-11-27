@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function * gen(arg){
+            console.log(arg)        //1
+          
+            let one = yield 111;
+            console.log(one)         //2
+          
+            //console.log(yield 222);
+            let two = yield 222;
+            console.log(two)        //3
+
+            let three = yield 333;
+            console.log(three)     //4
+        }
+
+        let iterator = gen('AAA');
+        console.log(iterator.next())       //执行1处语句 iterator.next()指向{value: 111, done: false}
+        //next方法可以传入实参  
+        console.log(iterator.next('BBB'))  //执行2处语句 iterator.next()指向{value: 222, done: false}   yield 111整体为'BBB'
+        console.log(iterator.next('CCC'))  //执行3处语句 iterator.next()指向{value: 333, done: false}   yield 222整体为'CCC'
+        console.log(iterator.next('DDD'))  //执行4处语句 iterator.next()指向{value: 444, done: false}   yield 333整体为'DDD'
+    </script>
+</body>
+</html>

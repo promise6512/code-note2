@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>柯里化</title>
+    <link rel="icon" href="../favicon.ico">
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+	    class Login extends React.Component{
+            /* 
+               初始化state
+            */
+            state = {
+                username : '',
+                password :''
+            }
+            /* 
+					高阶函数：如果一个函数符合下面2个规范中的任何一个，那该函数就是高阶函数。
+									1.若A函数，接收的参数是一个函数，那么A就可以称之为高阶函数。
+									2.若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数。
+									常见的高阶函数有：Promise、setTimeout、arr.map()等等
+
+					函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。 
+						function sum(a){
+							return(b)=>{
+								return (c)=>{
+									return a+b+c
+								}
+							}
+						}
+					*/
+            saveFormData = (dataType) =>{
+                //返回一个函数作为onChange的回调
+                return  (event) =>{
+                    this.setState({[dataType]:event.target.value})
+                }
+            }
+            
+            handleSubmit = (event) =>{
+                let {username,password} = this.state;
+                event.preventDefault()
+                alert(`你的用户名:${username},你的密码是:${password}`)
+                
+            }
+            render(){
+               return(
+                   <form action="http://course.zju.edu.cn" onSubmit={this.handleSubmit}>
+                                                        
+                        用户名：<input onChange={this.saveFormData('username')} type="text" name='uersname'/>  
+                        <br/><br/>
+                        密码：&nbsp;&nbsp;&nbsp;<input onChange={this.saveFormData('password')} type="password" name='password'/>  
+                        <br/>
+                        <button>登录</button>
+                   </form>
+               )
+            }
+        }
+        ReactDOM.render(<Login/>,document.getElementById('test'))
+	</script>
+</body>
+</html>

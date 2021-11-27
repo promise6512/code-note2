@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            flex-shrink 弹性元素的缩减系数
+               -缩减系数的计算方式比较复杂
+               -缩减多少是根据 缩减系数和元素大小计算
+            flex-basis 指定元素在主轴上的基础长度
+               -如果主轴是横向的，则该值就是元素的宽度
+               -如果主轴是纵向的，则该值指定的就是元素的高度或者宽度
+                默认值是auto ，表示参考元素自身的高度和宽度
+                如果传递了一个具体的数值，则以该值为主
+            flex 可以同时设置元素所有的三个样式
+            flex:增长 缩减 基础;
+                 默认值initial 相当于flex:0 1 auto;
+                       auto         flex:1 1 auto;
+                       none         flex:0 0 auto;
+            order 指定弹性元素的排列顺序
+         */             
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 400px;
+            border: 10px red solid;
+            display: flex;
+        }
+        li{
+            height: 100px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-grow: 1;
+        }
+        li:nth-child(1){
+             order: 3;
+        }
+        li:nth-child(2){
+            background-color: pink;
+            order: 2;
+        }
+        li:nth-child(3){
+            background-color: orange;
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+     <ul>
+         <li>111</li>
+         <li>22</li>
+         <li>3</li>
+     </ul>
+</body>
+</html>

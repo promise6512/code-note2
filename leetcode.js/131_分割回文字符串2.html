@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /**
+ * @param {string} s
+ * @return {string[][]}
+ */ 
+    //构建一个dp二维数组,表dp[i][j]表示字符串从i到j的子串是否为回文
+    var partition = function (s) {
+      let len = s.length;
+      let dp = new Array(len).fill(0).map(() => new Array(len).fill(true));
+      for (let i = len - 1; i >= 0; --i) {
+        for (let j = i + 1; j < len; ++j) {
+          //console.log(dp)
+          dp[i][j] = (s[i] === s[j]) && dp[i + 1][j - 1];
+          console.log(dp)
+        }
+      }
+    };
+    partition("abbab")
+  </script>
+</body>
+
+</html>

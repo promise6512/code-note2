@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>柯里化</title>
+    <link rel="icon" href="../favicon.ico">
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+	    class Login extends React.Component{
+
+            //初始化state
+            
+            state = {
+                username : '',
+                password :''
+            }
+      
+            saveFormData = (dataType,value) =>{
+                this.setState({[dataType]:value})
+            }
+            
+            handleSubmit = (event) =>{
+                let {username,password} = this.state;
+                event.preventDefault()
+                alert(`你的用户名:${username},你的密码是:${password}`)
+                
+            }
+            render(){
+               return(
+                   <form action="http://course.zju.edu.cn" onSubmit={this.handleSubmit}>
+                                                        
+   77                      用户名：<input onChange={event =>this.saveFormData('username',event.target.value)} type="text" name='uersname'/>  
+                        <br/><br/>
+                        密码：&nbsp;&nbsp;&nbsp;<input onChange={event =>this.saveFormData('password',event.target.value)} type="password" name='password'/>  
+                        <br/>
+                        <button>登录</button>
+                   </form>
+               )
+            }
+        }
+        ReactDOM.render(<Login/>,document.getElementById('test'))
+	</script>
+</body>
+</html>

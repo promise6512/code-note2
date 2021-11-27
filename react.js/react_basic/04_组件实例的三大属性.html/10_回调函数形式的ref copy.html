@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 准备好一个“容器” -->
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
+ 
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <!-- 引入pro-types.js 用于对标签属性进行限制 -->
+    <!-- PropTypes对象 -->
+    <script type="text/javascript" src="../js/prop-types.js"></script>
+    <script type="text/babel">
+        class Demo extends React.Component {
+            showdata = () =>{
+                console.log(this.input1.value)
+            }
+
+            showdata2 =() =>{
+                console.log(this.input2.value)
+            }
+            render(){
+                console.log(this)
+                return (
+                    <div>
+                        <input ref={ currentNode =>this.input1 = currentNode } type="text" placeholder='点击按钮提示数据'/>&nbsp;    
+                        <button onClick={this.showdata}>点我提示左侧的数据</button>&nbsp;    
+                        <input ref={currentNode => this.input2 = currentNode } onBlur={this.showdata2} type="text" placeholder='失去焦点提示数据'/>
+                    </div>
+                )
+            }
+        }
+         
+        ReactDOM.render(<Demo/>,document.getElementById('test1'))
+    </script>
+</body>
+</html>

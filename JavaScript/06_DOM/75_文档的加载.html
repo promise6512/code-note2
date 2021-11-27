@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id='btn'>我是一个button</button>
+    <script>
+        /* 
+          将js代码写到页面的下部就是为了可以在页面加载完毕以后再执行js代码
+          conload事件会在整个页面加载完成之后再触发
+          为window绑定onload事件
+        */
+        window.onload = function(){
+            var btn = document.getElementById('btn');
+            console.log(btn);
+        }
+    </script>
+</body>
+</html>

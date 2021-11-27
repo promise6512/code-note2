@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            延时调用:
+                一个函数不马上执行 三秒以后再执行
+            延时调用只执行一次 定时调用执行多次
+            延时调用和定时调用可以相互替代
+        */
+        var num = 0
+        var timer = window.setTimeout(function(){
+            document.write(num)
+       },1000)
+       window.clearTimeout(timer)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

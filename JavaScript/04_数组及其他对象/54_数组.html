@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+		        数组(Array)
+				   -数组也是一个对象
+				   -它和普通陪的对象功能类似
+				   -不同的是普通对象是使用字符串作为属性名
+				       而数组使用数字作为索引来操作属性(数组中称为元素)
+				   -索引
+				      从0开始的整数
+					-数组的存储性能，在开发中我们经常使用数组来存储一些数据
+			 */
+			//创建数组对象
+			var arr = new Array(1,2,4,5);
+			
+		    //向数组中添加元素  
+			arr[0] = 10;
+			
+			//读取数组中的元素
+			//如果没有 返回undefined
+			//console.log(arr[100]); -->undefined
+			
+			 //获取数组长度 
+			 console.log(arr.length);
+			 console.log(arr);
+			
+			//修改length
+			//如果修改的length小于原长 则多余元素被删除
+			 arr.length = 8;
+			 console.log(arr.length)
+			 console.log(arr);
+
+		/* 	 indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
+			 语法:
+			    Arry.indexOf(target) */
+			console.log('a = ' +arr.indexOf(2))
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

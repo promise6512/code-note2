@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 准备好一个“容器” -->
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
+ 
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <!-- 引入pro-types.js 用于对标签属性进行限制 -->
+    <!-- PropTypes对象 -->
+    <script type="text/javascript" src="../js/prop-types.js"></script>
+    <script type="text/babel">
+        class Demo extends React.Component {
+            state = {isHot:true}
+            showInfo = () =>{
+                alert(this.input1.value)
+               /*  let isHot = this.state.isHot;
+                this.setState({isHot:!isHot}) */
+            }
+            changeWeather = () =>{
+                let isHot = this.state.isHot;
+                this.setState({isHot:!isHot})
+            }
+            
+            saveInput  = (c) =>{
+                this.input1 = c;
+                console.log("@",c)
+                
+            }
+            
+            render(){
+                let {isHot} = this.state;
+                return (
+                    <div>
+                        <h2>今天天气很{isHot?"炎热":'凉爽'}</h2>
+                        {/*<input ref={ currentNode => {this.input1=currentNode;console.log('ref',currentNode)} } type="text"/>*/ } 
+                        
+                        <input ref={ this.saveInput } type="text"/>
+
+                        <br/><br/>
+                        <button onClick={this.showInfo}>点我提示输入的数据</button>
+                        <button onClick={this.changeWeather}>点我切换天气</button>
+                    </div>
+                )
+            }
+        }
+         
+        ReactDOM.render(<Demo/>,document.getElementById('test1'))
+    </script>
+</body>
+</html>

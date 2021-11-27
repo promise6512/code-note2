@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            bind
+                语法: fun.bind(obj)
+                作用: 返回一个fun函数的复制  并将它的this指向设定为obj
+            
+        */
+        function fun(){
+           console.log(this)
+        }
+       // console.log(this)
+        let fun2 = fun.bind({a:1})
+        fun2()
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+		        使用工厂方法创建的对象无法区分类型	 
+			 */
+			/* 
+			   创建一个构造函数 专门用来构造person对象
+			   不同的是构造函数习惯首字母大写
+			   
+			   构造函数和普通函数的区别就是调用方式的不同
+			      普通函数是直接调用 构造函数需要用new关键字调用
+				  
+				 构造函数的执行流程
+				   1.立刻创建一个新的对象
+				   2.将新建的对象设置为函数的this,在构造函数中用this引用新建的对象
+				   3.逐行执行函数中的代码
+				   4.将新的对象作为新的值返回
+				 使用同一个构造函数创建的对象 我们称为一类对象 也将一个构造函数称为一个类
+				     我们通过一个构造函数创建的对象 称为是该类的实例
+			
+			 */
+			function Person(name , age , gender){
+				this.name = name
+				this.age = age
+				this.gender = gender
+				this.sayname = function(){
+					alert(this.name)
+				}
+			};
+			var sun = new Person('孙悟空',18,'男');
+			console.log(sun)
+			/* 
+			  使用使用instanceof 可以检查一个对象是否是一个类的实例
+			     所有的对象都是Object的后代
+			 */
+			console.log(sun instanceof Person)
+			console.log(sun instanceof Object)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

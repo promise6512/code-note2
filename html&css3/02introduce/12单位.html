@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" font-size='10px'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+          长度单位:
+              像素
+                  -屏幕（显示器）实际上是由一个个的小点点构成
+                  -不同屏幕像素大小不同
+                  -同样200px在不同设备下显示效果不一样
+              
+              百分比
+
+              em
+                -em是相对于父元素的字体大小来计算的
+                -1em=1font-size
+              
+              rem
+                -rem是相对于根元素的字体大小来计算
+            
+        */
+        #html {
+            font-size: 10px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .box2 {
+            width: 30%;
+            height: 30%;
+            background-color: blue;
+        }
+
+        .box3 {
+            font-size: 30px;
+            width: 10em;
+            height: 10em;
+            background-color: blue;
+        }
+
+        .box4 {
+            font-size: 30px;
+            width: 10rem;
+            height: 10rem;
+            background-color: red
+    </style>
+</head>
+
+<body>
+    <div class='box1'>
+        <div class="box2"></div>
+    </div>
+    <div class='box3'></div>
+    <div class='box4'>11</div>
+</body>
+
+</html>

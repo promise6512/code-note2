@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+        }
+
+        #box2 {
+            width: 100px;
+            background-color: yellow;
+            height: 100px;
+            position: absolute;
+            left: 0px;
+            top: 200px;
+        }
+
+        #box3 {
+            width: 100px;
+            background-color: yellow;
+            height: 100px;
+            position: absolute;
+            left: 500px;
+            top:200px;
+        }
+    </style>
+    <script src = '../tools.js'>
+    </script>
+    <script>
+        window.onload = function () {
+            //封装函数
+            /* 
+              obj 要执行动画的对象
+            
+            */
+            var timer;
+            var box1 = document.getElementById('box1');
+            var btn01 = document.getElementById('btn01');
+            var btn02 = document.getElementById('btn02');
+            var btn03 = document.getElementById('btn03');
+            btn01.onclick = function(){
+                Move(box1,'left',10,800);
+            };
+
+            btn02.onclick = function(){
+                Move(box2,'top',10,400)
+            };
+
+          /*   btn03.onclick = function(){
+                Move(box2,20,800)
+            }
+ */
+            btn04.onclick = function(){
+                Move(box3,'height',10,400,function(){
+                    Move(box3,'width',10,400)
+                })
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">box1向右移动</button>
+    <button id='btn02'>向左移动</button>
+    <button id = 'btn03'>box2向右移动</button>
+    <button id = 'btn04'>测试</button>
+    <br><br>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+
+</html>

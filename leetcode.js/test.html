@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      sessionStorage.setItem("a", "anb");
+      console.log(sessionStorage.getItem("a"));
+      console.log(sessionStorage.length);
+      for (let i = 0, len = sessionStorage.length; i < len; i++) {
+        let key = sessionStorage.key(i);
+        console.log(key, sessionStorage.getItem(key));
+      }
+
+      let fooSymbol = new Symbol("foo");
+      console.log(fooSymbol);
+    </script>
+  </body>
+</html>

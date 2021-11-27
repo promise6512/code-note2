@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+           样式的冲突
+                -当我们通过不同的选择器，选中相同的元素，并且为相同的样式设置不同的值时
+            发生样式冲突时，应用哪个样式由选择器的权重（优先级）决定
+            
+            选择器的权重
+                 内联样式             1000
+                 id选择器             100 
+                 类和伪类选择器        10 
+                 元素选择器            1
+                 通配选择器            0
+                 继承的样式           没有优先级
+            
+            比较优先级时，需要将所有的选择器的优先级进行相加计算，最后优先级越高，则越优先显示
+            （分组选择器单独计算）
+
+            优先级计算后相等 优先使用靠后的样式
+            
+            可以在某一个样式的后边添加!important 则该样式会取得最高优先级
+                 慎用！！！
+            div{
+                background-color:red; !important
+            }
+        */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

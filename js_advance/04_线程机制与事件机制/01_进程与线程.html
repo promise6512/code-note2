@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+1. 进程：程序的一次执行, 它占有一片独有的内存空间
+2. 线程： CPU的基本调度单位, 是程序执行的一个完整流程
+3. 进程与线程
+    应用程序必须运行到某个进程的某个线程上
+  * 一个进程中一般至少有一个运行的线程: 主线程，进程启动后自动创建
+  * 一个进程中也可以同时运行多个线程, 我们会说程序是多线程运行的
+  * 一个进程内的数据可以供其中的多个线程直接共享
+  * 多个进程之间的数据是不能直接共享的
+    线程池(thread pool):保存多个线程对象的容器 实现线程对象的反复利用
+
+4.比较单线程和多线程
+    多线程
+        优点:能有效提升CPU的利用率
+        缺点:创建多线开销
+                线程间切换开销
+    单线程
+        优点:顺序编程简单易懂
+        缺点:效率低
+    
+5.JS是单线程运行
+  但使用H5中的Web Workers可以多线程运行
+  浏览器都是多线程运行
+
+
+6.浏览器运行是单进程还是多进程?
+  * 有的是单进程
+    * 老版IE
+  * 有的是多进程
+      firefox
+    * chrome
+    * 新版IE
+7. 如何查看浏览器是否是多进程运行的呢?
+  * 任务管理器==>进程
+
+-->
+<script>
+</script>
+</body>
+</html>

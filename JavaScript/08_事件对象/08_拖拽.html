@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btn01 = document.getElementById('btn01');
+            var btn02 = document.getElementById('btn02');
+
+            btn01.onclick = function(){
+                 alert(1);
+            }
+            btn02.onclick = function(){
+                 alert(2);
+            }
+            /* 
+               当调用了一个元素的setCapture()方法之后，这个元素会将下一次所有的鼠标按下
+                    相关的事件捕获到自身
+            */
+            btn01.setCapture();
+        }
+         
+    </script>
+</head>
+<body>
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+</body>
+</html>

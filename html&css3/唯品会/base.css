@@ -1,0 +1,23 @@
+.clearfix::before,
+.clearfix::after{
+    content:'';
+    display: table;
+    clear: both;
+}
+body{
+    font: 12px/1.5 tahoma,arial,Hiragino Sans GB,WenQuanYi Micro Hei,微软雅黑,宋体,sans-serif;
+    color: #333;
+    min-width: 1170px;
+}
+/* 设置一个类来表示中间容器的宽度*/
+.w{
+    width:1170px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover{
+    color: #f10180;
+}

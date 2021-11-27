@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			   使用in检查对象是否含有某个属性时  如果对象中没有但原型中有 也会true
+			   
+			   可以使用hasOwnProperty()来检查对象自身中是否含有该属性
+			   
+			   原型对象中也有原型(套娃)
+			   当我们访问对象的一个属性或方法时  它会先在对象自身中寻找 如果有则直接使用
+			      如果没有则回去原型对象中寻找
+				  在没有去原型对象的原型中寻找 直到找到Objcet对象的原型
+				  Objcet对象没有原型
+			  */
+			function Myclass(){
+				this.name = 124;
+			}
+		    Myclass.prototype.age = 1111
+			var my1 = new Myclass();
+			//my1.name = 123;
+			//console.log(my1.name);
+			//console.log('age' in my1);
+			//console.log(my1.hasOwnProperty('age'))  -->false 
+			//console.log(my1.hasOwnProperty('hasOwnProperty'))-->false
+			//console.log(my1.__proto__.hasOwnProperty('hasOwnProperty'))-->false
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

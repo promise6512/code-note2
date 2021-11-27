@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name = 'username' value='hello'>
+        <!-- 
+            autocomplete用于关闭自动补全 可以直接写在form中
+            readonly 设置为只读 数据会提交
+            disabled 设置为禁用 数据不会提交
+            autofocus 自动获取焦点
+
+         -->
+         <input type="text" name = 'username' value='hello' readonly>
+         <input type="text" name = 'username' value='hello' disabled >
+         <input type="text" name = 'username' value='hello'  autofocus>
+        <input type="text" name = 'username' value='hello' autocomplete="off">
+        <br><br>
+        <input type="submit" name="" id="">
+        <input type="button" name="" value="配合js使用">
+        <input type="reset">
+        <!-- 
+            颜色表单 IE不支持
+         -->
+        <input type="color">
+        <br><br>
+        <!-- 
+            下面三个按钮和前面三个按钮功能一样  不过可以在里面写字或放图片等
+            使用得更多
+         -->
+        <button type="submit">提交</button>
+        <button type="button">普通</button>
+        <button type="reset">重置</button>
+    </form>
+</body>
+</html>

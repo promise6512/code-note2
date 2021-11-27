@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            background-color: #bfa;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- 准备一个容器 -->
+    <div id="test"></div>
+
+    <!-- 引入react核心库 -->
+    <script src="../js/react.development.js"></script>
+    <!-- 引入react-dom 用于支持react操作DOM -->
+    <script src="../js/react-dom.development.js"></script>
+    <!-- 引入babel 用于将jsx转为js -->
+    <script src="../js/babel.min.js"></script>
+    <script type="text/babel">  //此处一定要写babel
+        const myId = 'atGuiGu';
+        const content = 'hello ReaCt'
+        //1.创建虚拟DOM
+        const VDOM = (
+            <h2 className='title' id={myId.toLowerCase()}>
+                <input type="text"/>
+                <input type="text"></input>
+                <span style ={{color:'red',fontSize:'50px'}}>{content.toLowerCase()}</span>
+            </h2>
+        )
+        ReactDOM.render(VDOM,document.getElementById('test'))
+
+        /* jsx概念
+                1.全称:  JavaScript XML
+                2.react定义的一种类似于XML的JS扩展语法: JS + XML本质是React.createElement(component, props, ...children)方法的语法糖
+                3.作用: 用来简化创建虚拟DOM 
+                    1)写法：var ele = <h1>Hello JSX!</h1>
+                    2)注意1：它不是字符串, 也不是HTML/XML标签
+                    3)注意2：它最终产生的就是一个JS对象
+                4.标签名任意: HTML标签或其它标签
+                5.标签属性任意: HTML标签属性或其它
+
+           jsx 语法规则
+               1.定义虚拟DOM时 不要写引号
+               2.标签中混入js表达式时要用{}
+                    js语句(代码)
+                        下面这些都是语句(代码)
+                            if(){}
+                            for(){}   
+                            swith(){case:xxx}
+                            
+                    js表达式: 一个表达式会产生一个值 可以放在需要值的任何地方
+                        下面都是表达式
+                            a
+                            a+b
+                            demo(1) 函数调用
+                            arr.map() 调用数组的map的函数
+                            function fun(){} 定义函数
+                    
+               3.样式的类名要用className而非class
+               4.内联样式使用 style={{key1:value1,key2:value2}}
+               5.虚拟DOM只有一个根标签
+               6.标签必须闭合
+                    <input type="text">为错误语法
+                    必须写成<input type="text"/> 或 <input type="text"></input>
+               7.标签首字母
+                    (1)若小写字母开头 则转为html中的同名元素(如div span h1等)  若html中无 则报错
+                        不能写出<good></good> <zju></zju>之类的奇葩标签
+                            虽然能正常在页面显示 但是不规范！
+                    (2)若大写字母 react 就去渲染对应的组件 若组件没有定义 则报错
+
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * @param {number} n
+ * @return {number}
+ */
+        var numSquares = function (n) {
+            let dp = new Array(n + 1).fill(Infinity);
+            dp[0] = 0;
+            for (let i = 1; i < n + 1; i++) {
+                if (Math.floor(Math.sqrt(i)) !== Math.sqrt(i)) {
+                    continue;
+                }
+                for (let j = i; j < n + 1; j++) {
+                    dp[j] = Math.min(dp[j - i] + 1,dp[j])
+                }
+                console.log(dp)
+            }
+            return dp[n]
+        };
+        numSquares(12)
+    </script>
+</body>
+
+</html>

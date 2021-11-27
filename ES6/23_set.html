@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //通过构造函数新建set
+        let s1 = new Set()
+
+        //使用typeof 返回'object'
+        console.log(typeof s1)
+        //可以在括号中传递一个可迭代序列(一般传递数组)
+        let s2 = new Set([1,2,3,1,5,6,2])
+        console.log(s2)
+
+        //size属性表示集合元素个数
+        console.log(s1.size)
+        console.log(s2.size)
+
+        //新增元素个数
+        s2.add('好')
+        console.log(s2)
+
+        //删除元素
+        //若存在则删除元素  不存在则什么也不做
+        s2.delete(1);
+        s2.delete(0);
+        console.log(s2)
+
+        //判断是否存在某个元素 返回布尔值
+        console.log(s2.has(2))
+
+        //清空集合
+        s2.clear()
+        console.log(s2)
+
+        //集合实现了iterator接口
+        s3 = new Set([1,2,3,4,5,6,7])
+        for(let v of s3){
+            console.log(v)
+        }
+    </script>
+</body>
+</html>

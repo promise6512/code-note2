@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+        行内元素的盒模型
+           -行内元素支持设置高度和宽度
+           -行内元素可以设置padding，border，margin，但是垂直方向padding不会影响页面的布局
+
+        display 用来设置显示的类型
+            可选值：
+                  inline 将元素设置为行内元素
+                  block  将元素设置为块元素
+                  inline-block 将元素设置为行内块元素
+                            行内块，既可以设置宽度和高度又不会独占一行
+                  table   将元素设置表格
+                  none    元素不在页面中显示
+        visibility 用来设置元素的显示状态
+            可选值:
+                visible 默认值，正常显示
+                hidden  元素在页面中隐藏，但任然会占位置
+        */
+
+        .s1{
+           background-color: blue;
+           height: 20px;
+           width: 20px;
+           padding-bottom: 100px;
+           border: green solid 10px;
+           margin: 20px;
+        }
+        .box1{
+            background-color: green;
+            height: 200px;
+            width: 200px;
+        }
+        .s2{
+            background-color: red;
+            margin: 20px;
+            padding: 20px;
+        }
+   
+    </style>
+</head>
+<body>
+    <span class="s1">我是span</span>
+    <span class='s2'>我是span2</span>
+    <div class="box1"></div>
+</body>
+</html>

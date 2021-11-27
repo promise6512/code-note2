@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var coinChange = function (coins, amount) {
+            //动态规划
+            //dp[i]代表组成金额为i的最少硬币数量
+            if (amount === 0) {
+                return 0
+            }
+            let dp = new Array(amount + 1).fill(Number.MAX_VALUE)
+            dp[0] = 0;
+            coins.sort((a,b) => a-b);
+           // console.log(coins)
+            for (let i = 1; i <= amount; i++) {
+                for (let coin of coins) {
+                    //console.log(i,coin)
+                    if (coin > i) {
+                        break;
+                    } else {
+                        dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+                    }
+                }
+                //console.log('@@@@@@@@@@@@@')
+            }
+           // console.log(dp)
+            return dp[amount] === Number.MAX_VALUE ? -1 : dp[amount];
+        };
+
+        coinChange([474,83,404,3],264)
+    </script>
+</body>
+
+</html>

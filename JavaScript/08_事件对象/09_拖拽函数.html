@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 220px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById('box1');
+            drag(box1);
+            function drag(obj) {
+                obj.onmousedown = function (envet) {
+                    //鼠标按下进行捕获
+                    obj.setCapture && obj.setCapture()
+                    var ol = event.clientX - obj.offsetLeft;
+                    var ot = event.clientY - obj.offsetTop;
+                    document.onmousemove = function (event) {
+                        var x = event.clientX;
+                        var y = event.clientY;
+                        obj.style.left = x - ol + 'px';
+                        obj.style.top = y - ot + 'px';
+                    }
+                    document.onmouseup = function () {
+                        //鼠标松开释放捕获
+                        obj.releaseCapture && obj.releaseCapture();
+                        /* 设置为null取消事件 */
+                        document.onmousemove = null;
+
+                        document.onmouseup = null;
+                    }
+                    // return false
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+
+</html>

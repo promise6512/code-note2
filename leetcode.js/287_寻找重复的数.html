@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //快慢指针 类似于判断链表有环
+        //重
+        var findDuplicate = function (nums) {
+            let fast = nums[0];
+            let slow = nums[0];
+            do {
+                slow = nums[slow];
+                fast = nums[nums[fast]];
+            } while (fast !== slow)
+            slow = nums[0];
+            while (slow !== fast) {
+                slow = nums[slow];
+                fast = nums[fast];
+            }
+            return slow;
+        };
+
+    </script>
+</body>
+
+</html>

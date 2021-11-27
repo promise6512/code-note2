@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态成员</title>
+</head>
+<body>
+    <script>
+        // function Phone(){
+
+        // }
+        // Phone.name = '手机';
+        // Phone.change = function(){
+        //     console.log("我可以改变世界");
+        // }
+        // Phone.prototype.size = '5.5inch';  
+
+        // let nokia = new Phone();    
+
+        // console.log(nokia.name);   实例对象和函数对象的方法/属性不相通
+        // // nokia.change();
+        // console.log(nokia.size);
+
+        class Phone{
+            //静态属性
+            // 属于类而不属于实例
+            static name = '手机';
+            static change(){
+                console.log("我可以改变世界");
+            }
+        }
+
+        let nokia = new Phone();
+        console.log(nokia.name);
+        console.log(Phone.name);
+    </script>
+</body>
+</html>

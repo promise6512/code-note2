@@ -1,0 +1,111 @@
+@total-width:750;
+html{
+    background-color: #eff0f4;
+}
+a{
+    text-decoration: none;
+}
+.w{
+    width: 92.38vw;
+    margin: auto;
+}
+.topbar:extend(.w){
+    display: flex;
+    height: 23.33vw;
+    justify-content: space-between;
+    align-items: center;
+    a{
+        color: #24253d;
+        font-size: 8vw;
+        i{
+            color: #999;
+            font-size: 4.5vw;
+        }
+    }
+}
+.banner:extend(.w){
+    height: 36.97vw;
+    img{
+        height: 100%;
+    }
+}
+/*设置中间菜单的高度*/
+.menu:extend(.w){
+    height: 43.8vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    a{
+        width: 43.59vw;
+        height: 13.86vw;
+        border-radius: 5%;
+        text-align: center;
+        line-height: 13.86vw;
+        color: white;
+        font-size: 4.6vw;
+        i{
+            margin-right: 1.6vw;
+        }
+    }
+    a:first-child{
+        background-color: #f97053;
+    }
+    a:nth-child(2){
+        background-color: #c962ff;
+    }
+    a:nth-child(3){
+        background-color: #ff3971;
+    }
+    a:nth-child(4){
+        background-color: #1caafd;
+    }  
+}
+div.course-list:extend(.w){
+    height: 55.5vw;
+    margin-top: 6.93vw;
+    .title{
+        display: flex;
+        border-left: 1px solid rgb(0, 17, 255);
+        padding: 0 3vw;
+        justify-content: space-between;
+        font-size: 5.6vw;
+        a{
+            color: #656565;
+        }
+    }
+    .item-list{
+        margin-top: 6.13vw;
+        display: flex;
+        justify-content: space-between;
+        width: 184.76vw;
+        overflow: auto;
+        .item{
+            background-color: white;
+            border-radius: 5%;
+            height: 36.8vw;
+            width: 36.92vw;
+            padding: 3.2vw;
+            .cover img{
+                height: 20.93vw;
+            }
+            .course-title{
+                text-align: center;
+                margin-top: 3.33vw;
+                font-size:3.5vw;
+            }
+            .user-info{
+                display: flex;
+                margin-top: 3.33vw;
+                img{
+                    height: 5.6vw;
+                }
+                .nickname{
+                    line-height: 5.6vw;
+                    margin-left: 3vw;
+                    font-size: 2vw;
+                }
+            }
+        }
+    }
+}

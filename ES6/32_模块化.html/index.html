@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type = 'module'>
+
+        //1.通用导入方式
+        //将模块m1内容 导入到变量m1中
+        import * as m1 from './m1.js'
+        console.log(m1)
+        
+        console.log(m1.school)
+
+        import * as m2 from './m2.js'
+        m2.learn()
+
+        import * as m3 from './m3.js'
+        console.log(m3)
+        //模块中的方法和属性保存在m3的default属性中
+        console.log(m3.default.school)
+
+        //2.解构赋值形式
+        /* 
+           语法:
+               import {变量1,变量2} from 路径;
+               注意 变量1、变量2必须和模块中的暴露的属性名和方法名相同
+               变量数量可以少于模块中暴露的
+
+        */
+        import {school,teach} from './m1.js';
+
+        //变量不可以重名  如果重名则用as取个别名
+        import {school as zju,learn} from './m2.js';
+        console.log(school)
+        console.log(teach)
+        console.log(zju)
+        
+        //导入采用default默认暴露的模块  必须采用{default as 别名}
+        import {default as m33} from './m3.js'
+        console.log(m33)
+
+        //3.简便形式 只能针对默认暴露
+        import m333 from './m3.js'
+        console.log(m333)
+    </script>
+</body>
+</html>

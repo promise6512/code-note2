@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var findNthDigit = function (n) {
+      let base = 9, digit = 1;
+      let num = 0;
+      while (n > base * digit) {
+        n -= base * digit;
+        num += base;
+        digit++;
+        base *= 10;
+      }
+      //console.log(n, digit)
+      num += Math.floor(n / digit);
+      let index = n % digit;
+      if (index === 0) {
+        let str = num + "";
+        return str[str.length - 1];
+      } else {
+        num++;
+        let str = num + '';
+        return +str[index-1];
+      }
+    };
+    findNthDigit(10)
+  </script>
+</body>
+
+</html>

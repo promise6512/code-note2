@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+           History
+                -操作浏览器向前或向后翻页
+                back() 	加载 history 列表中的前一个 URL。
+                forward() 	加载 history 列表中的下一个 URL。
+                go() 	
+                   加载 history 列表中的某个具体页面。
+                   它需要传递一个整数 正数向前跳 负数向后跳
+
+        */
+     
+        window.onload = function () {
+            var btn01 = document.getElementById('btn01');
+            var btn02 = document.getElementById('btn02');
+            btn01.onclick = function(){
+                console.log(history)
+            }
+            btn02.onclick = function(){
+                history.forward()
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <button id='btn01'>aaaa1</button>
+    <button id='btn02'>aaaa2</button>
+    <h1>history</h1>
+    <a href="./01_BOM简介.html">bom</a>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ListNode(val, next) {
+            this.val = (val === undefined ? 0 : val)
+            this.next = (next === undefined ? null : next)
+        }
+        var isPalindrome = function (head) {
+            if (!head || !head.next) {
+                return true;
+            }
+            let length = 2;
+            let p = head;
+            let q = head.next;
+            while (q.next) {
+                //构造双向链表
+                q.prev = p;
+                q = q.next;
+                p = p.next;
+                length++
+            }
+            //尾结点尾rear
+            q.prev = p;
+            let rear = q;
+            //console.log(length)
+            for (let i = 0; i < length / 2; i++) {
+                console.log(head,rear)
+                if (head.val !== rear.val) {
+                    return false;
+                }
+                head = head.next;
+                rear = rear.prev;
+            }
+            return true;
+        };
+        let listNode = new ListNode(1);
+        listNode.next = new ListNode(2);
+        listNode.next.next = new ListNode(2);
+        listNode.next.next.next = new ListNode(1);
+      //  console.log(listNode)
+        console.log(isPalindrome(listNode))
+    </script>
+</body>
+
+</html>

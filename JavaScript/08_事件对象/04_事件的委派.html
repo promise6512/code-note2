@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+           /*  float: left; */
+            background-color: #bfa;
+        }
+        button{
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+    </style>
+    <script>
+        /* 
+           事件的委派
+               我们希望之绑定一次 即可应用到多个元素上 即使元素是后添加
+               我们可以尝试将其绑定给元素的共同的组先元素
+               将事件统一绑定给元素共同的组先元素 这样当后代元素上的事件触发时 会一直冒泡到组先元素
+            event.target
+               -触发事件的元素
+        */
+        window.onload = function(){
+            var u1 = document.getElementById('u1');
+            var allA = document.getElementsByTagName('a');
+            var rank = 4;
+           // alert(allA[0].innerHTML)
+            u1.onclick = function(event){
+                //alert(event.target.innerHTML)
+                if(event.target.className = 'link'){
+                    alert('我是'+event.target.innerHTML)
+                }
+            }
+            var btn = document.getElementById('btn');
+            btn.onclick = function(){
+                var li = document.createElement('li');
+                li.innerHTML = '<a href="javascript:;" class="link">超链接' + rank +'</a>';
+                rank += 1;
+                u1.appendChild(li);
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="u1">
+        <li><a href="javascript:;" class="link">超链接1</a></li>
+        <li><a href="javascript:;" class="link">超链接2</a></li>
+        <li><a href="javascript:;" class="link">超链接3</a></li>
+    </ul>
+    <button id="btn">添加一个超链接</button>
+</body>
+</html>

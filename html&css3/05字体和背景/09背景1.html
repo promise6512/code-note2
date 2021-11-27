@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+           background-color  设置背景颜色
+           background-repeat 用来设置重复方式
+               可选值:
+                   repeat 默认值 ，xy双方向重复
+                   repeat-x x方向重复
+                   repeat-y y方向重复
+                   no-repeat 不重复
+           background-position 设置图片的位置
+                设置方式:
+                    通过 top left right bottom 几个方位词设定
+                        background-position:top left;表示在网页左上角
+                                            top center  上中间
+                                            center center 正中间
+                        可以理解为九宫格
+                        若只写一个值 第二值默认为center
+                    通过偏移量指定背景图片的位置:
+                        水平方向的偏移量
+                        垂直方向的偏移量
+                        
+        */
+        .box1{
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+            background-image: url('./exercise/素材/01.jpg');
+            background-repeat: no-repeat;
+            background-position: center left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

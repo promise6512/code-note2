@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+           子元素选择器
+                 作用：选中指定父元素的指定子元素
+                 语法：父元素>子元素
+            
+           后代元素选择器
+                  作用：选中指定元素内的指定后代元素
+                  语法：祖先 后代
+
+        */
+        div.abc>span{
+            color: yellow;
+        }
+        div span{
+            color:blue;
+        }
+        div>p>span{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        父元素
+        子元素
+        祖先元素
+        后代元素
+        兄弟元素
+    -->
+    <div class="box">
+        我是一个div
+        <p>
+            我是div中的p元素
+            <span>我是p中的span</span>
+        </p>
+        <span>我是div.box中的span</span>
+    </div>
+    <div class="abc">
+        <span>我是div中的span元素</span>
+    </div>
+
+
+</body>
+</html>

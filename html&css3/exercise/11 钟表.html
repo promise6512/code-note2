@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+             margin: 0;
+             padding: 0;
+         }
+        @keyframes run{
+            from{
+                transform: rotateZ(0deg);
+                }
+            to{
+                transform: rotateZ(360deg);
+            }
+        } 
+        .clock{
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            margin: 100px auto;
+            background-image: url('./素材/clock.png');
+            background-size: 500px 500px;
+            position: relative;
+        }
+        .clock > div{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .second-wrapper{
+            height: 70%;
+            width: 70%;
+            animation: run 1s infinite steps(60) ;
+            z-index: 1;
+        }
+        .second{
+            height: 50%;
+            width: 2px;
+            background-color: red;
+            margin: 0 auto;
+            z-index: 1;
+        }
+        .minute-wrapper{
+            height: 70%;
+            width: 70%;
+            animation: run 60s infinite steps(60) ;
+        }
+        .minute{
+            height: 50%;
+            width: 4px;
+            background-color: black;
+            margin: 0 auto;
+        }
+        .hour-wrapper{
+            height: 50%;
+            width: 50%;
+            animation: run 720s infinite ;
+        }
+        .hour{
+            height: 50%; 
+            width: 6px;
+            background-color: black;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="second-wrapper"><div class="second"></div></div>
+        <div class="minute-wrapper"><div class="minute"></div></div>
+        <div class="hour-wrapper"><div class="hour"></div></div>
+    </div>
+</body>
+</html>

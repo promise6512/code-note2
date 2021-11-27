@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			  Data对象
+			     在JS中使用Data对象表示一个时间
+			 */
+			//创建一个Data对象
+			//如果直接使用构造函数创建一个Data对象 则会封装成当前代码执行的时间
+			var d = new Date();
+			//console.log(d);
+			
+			//创建一个指定的时间对象
+			//日期的格式 "月份/日/年 时:分:秒"
+			var d2 = new Date("1/03/2020 11:10:30");
+			
+			//获取日
+			//console.log(d.getDate());
+			
+			//获取星期 0表示周日
+			//console.log(d.getDay());
+			
+			//获取月份0表示1月 1表示2月...
+			//console.log(d2.getMonth());
+			
+			//获取年份
+			//console.log(d.getFullYear());
+			
+			/* 
+			   getTime()
+			      -获取当前对象的时间戳
+				  -时间戳:格林威治时间 1970.1.1 0:0:0 至今的毫秒数
+			 */
+			//console.log(d2.getTime())
+			
+			//获取当前的时间戳
+			time = Date.now();
+			console.log(time);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

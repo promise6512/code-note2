@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        /* 
+            获取元素当前显示的样式
+               语法:元素.currentStyle.样式名
+            只有IE支持
+
+            在其他浏览器中可以使用
+                getComputedStyle()这个方法来获取当前的样式
+                    需要两个参数
+                       第一个:要获取样式的元素
+                       第二个:可以传递一个伪元素,一般都传null  
+                    该方法会返回一个对象,对象中封装了当前元素对应的样式
+                       可以通过对象.样式名读取样式
+                       如果获取的样式没有设置 则会获取真实的值 而不是默认值
+                       比如 没有设置width 它不会获取auto 而是一个长度
+                    该方法不支持IE8及以下的浏览器
+                
+            通过currentStyle 和 getComputeStyle()读取的样式都是只读的
+                不能修改 如果要修改必须通过style属性
+            
+            变量没找到会报错  属性没找到会返回未定义
+        */
+        window.onload = function(){
+            var box1 = document.getElementById('box1');
+            var btn01 = document.getElementById('btn01');
+          //  alert(box1)
+            btn01.onclick = function(){
+               alert(getStyle(box1,'backgroundColor'));
+            };
+
+            /* 
+              定义一个函数用来获取当前元素的样式
+            */
+            function getStyle(obj,name){
+                 if(window.getComputedStyle){
+                     return getComputedStyle(obj , null)[name];
+                 }else{
+                     return obj.currentStyle[name];
+                 }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id = 'btn01'>我是一个按钮</button>
+    <br>
+    <br>
+    <div id="box1"></div>
+</body>
+</html>

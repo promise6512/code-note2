@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			  原型prototype
+			   我们所创建的每一个函数 解析器都会函数中添加一个属性prototype
+			       prototype对应一个原型对象
+				   如果函数作为普通对象调用 prototype屁用没有
+				   如果函数通过构造函数形式调用 它所创建的对象都会有一个隐含的属性
+					  指向该构造函数的原型对象 我们可以通过__proto__来访问
+					  
+				   
+				   原型对象相当于一个公共的区域 所有同一个类的实例都可以访问这个原型对象
+				       我们可以将对象中共有的内容 统一设置到原型对象中
+					   当我们访问对象的一个属性或方法时  它会先在对象自身中寻找 如果有则直接使用
+					      如果没有则回去原型对象中寻找
+			 */
+			function  Myclass(name , age , gender){
+				/* this.prototype.name = name;
+				this.prototype.age = age;
+				this.prototype.gender = gender;
+				this.prototype.sayName = function(){
+					alert('Hello大家好,我是: '+this.name)
+				} */
+			}
+			Myclass.prototype.name = 123;
+			var my1 = new Myclass('孙悟空',18,'男');
+			console.log(my1.name);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

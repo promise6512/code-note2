@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/script.js">
+
+    </script>
+    <!-- 
+         可以将js代码编写到script标签
+     -->
+    <!--  <script>
+         alert('我是script标签的代码！')
+     </script> -->
+
+    <!-- 
+        也可以将js代码编写到外部js文件中，然后通过script标签引入
+        写到外部文件中可以在不同页面中同时引用，也利用浏览器的缓存机制
+        推荐使用方式
+     -->
+     <!-- 
+         script标签一旦用于引入外部文件，就不能编写代码了，即使编写了浏览器也会忽略
+         如果需要则可以创建一个新的script标签用于编写内部代码
+      -->
+</head>
+<body>
+    <!-- 
+        可以将js代码编写到标签的onclick属性中
+        当我们点击按钮时，js代码才会运行
+
+        虽然可以写到标签的属性中，但是他们属于结构与行为耦合，不方便维护，不推荐使用
+     -->
+    <button onclick="alert('讨厌你点我干嘛');">
+        点我一下
+    </button>
+    <!-- 可以将js代码写到超链接的href属性中，这样当点击超链接时，会执行js代码 -->
+    <a href="javascript:alert('让你点你就点');">你也点我一下</a>
+    <a href="javascript:;">你也点我一下</a>
+</body>
+</html>

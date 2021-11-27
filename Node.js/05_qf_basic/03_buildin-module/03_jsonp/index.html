@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jsonp</title>
+</head>
+<body>
+  <script>
+    function getData(data){
+      alert(123);
+      console.log(data);
+    }
+  </script>
+  <!-- 将后端返回的数据作为js语言解析 -->
+  <!-- ajax存在跨域问题,而script标签的链接访问不会跨域 -->
+  <!-- 使用命令npx http-server -p 9000 运行网页,建立虚拟服务器 -->
+  <script src="http://localhost:8080/api/data?cd=getData"></script>
+</body>
+</html>

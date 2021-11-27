@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let s = ["h","e","l","l","o"];
+    var reverseString = function (s) {
+      let i = 0;
+      let j = s.length - 1;
+      let tmp;
+      while (i < j) {
+        tmp = s[i];
+        s[i] = s[j];
+        s[j] = tmp;
+        i++;
+        j--;
+      }
+    };
+    reverseString(s);
+    console.log(s)
+  </script>
+</body>
+
+</html>

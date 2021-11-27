@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var characterReplacement = function (s, k) {
+        let map = new Map();
+        let maxNum = 0;
+        let res = 0;
+        for (let i = 0; i < s.length; i++) {
+          for (let j = i; j < s.length; j++) {
+            map.set(s[j], (map.has(s[j]) ? map.get(s[j]) : 0) + 1);
+            maxNum = Math.max(maxNum, map.get(s[j]));
+            if (j - i + 1 - maxNum > k) {
+              break;
+            }
+            res = Math.max(res, j - i + 1);
+          }
+          map.clear();
+        }
+        return res;
+      };
+    //  debugger;
+      console.log(characterReplacement("AABABBA", 1));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            height: 100px;
+            background-color: red;
+            width: 100px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /* 
+               键盘事件
+                    onkeydwon
+                       -按键被按下
+                       -如果一直按着不松手 会连续触发
+                       -当onkeydown触发时 第一次和第二次会间隔略长一点 其他的              
+                    onkeyup
+                       -按键被松开   
+                键盘对象一般绑定给可以获取焦点的对象或者是document
+                event.keyCode
+                      -获取按键的编码
+                altKey
+                ctrlKey
+                shiftKey
+            */
+           /* 
+             文本框中输入内容 属于onkeydown默认行为
+            如果在onkeydown的响应函数中用return false取消默认行为 则无法输入内容
+            数字对应编码 0   48
+                        9   57
+                        0   96  (小键盘)
+                        9   105 (小键盘)
+           */
+           var input = document.getElementsByTagName('input')[0]
+         //  alert(input)
+           document.onkeydown = function(event){
+               if(event.keyCode == 65 && event.shiftKey){
+                   console.log(5)
+               }
+           }
+           document.onkeyup = function(){
+              // alert( '按键被松开了')
+           }
+           input.onkeydown = function(){
+               if(event.keyCode <= 57 && event.keyCode >=48 || event.keyCode <= 105 && event.keyCode >=96){
+                   return false
+               }
+           }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <input type="text">
+</body>
+</html>

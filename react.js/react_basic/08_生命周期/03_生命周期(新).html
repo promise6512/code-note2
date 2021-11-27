@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期</title>
+    <link rel="icon" href="../favicon.ico">
+</head>
+
+<body>
+    <!-- 准备好一个“容器” -->
+    <div id="test"></div>
+
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="../react_new/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script type="text/javascript" src="../react_new/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script type="text/javascript" src="../react_new/babel.min.js"></script>
+
+    <script type="text/babel">
+    /* 
+				1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
+									1.	constructor()
+									2.	componentWillMount()
+									3.	render()
+									4.	componentDidMount() =====> 常用
+													一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息
+				2. 更新阶段: 由组件内部this.setSate()或父组件render触发
+									1.	shouldComponentUpdate()
+									2.	componentWillUpdate()
+									3.	render() =====> 必须使用的一个
+									4.	componentDidUpdate()
+				3. 卸载组件: 由ReactDOM.unmountComponentAtNode()触发
+									1.	componentWillUnmount()  =====> 常用
+													一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
+		*/
+        //创建组件
+        class Count extends React.Component {
+            //1.构造器
+            constructor(props) {
+                console.log("count-constructor")
+                super(props)
+                console.log(props,'props')
+            }
+            //初始化状态
+            state = { count: 0, }
+
+            death = () => {
+                ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+                //clearInterval(this.timer)
+            }
+
+            //强制更新按钮的回调
+            force = () => {
+                this.forceUpdate()
+            }
+   
+            add = () => {
+                let { count } = this.state;
+                count += 1;
+                this.setState({ count });
+            }
+            
+            //new React新增生命周期环节  执行该环节后 state值在任何状态下都取决于props (一般只在这种特殊情况下使用)
+            static getDerivedStateFromProps(props){
+                console.log("getDerivedStateFromProps",props)
+                //返回值可以影响状态 
+                //如果返回一个状态对象如{count:100} 则状态被指定为{count:100} 且无法更新count属性
+                //可以接收一个参数props 如果return props则将状态指定为props
+                return null
+                
+            }
+            //3.组件挂载完毕的钩子
+            componentDidMount() {
+                console.log('count-componentDidMount')
+            }
+            //4.组件将要卸载
+            componentWillUnmount() {
+                console.log('count-componentwillMount')
+            }
+
+            //每次更新页面都会调用shouldComponentUpdate
+            shouldComponentUpdate(nextProps,nextState) {
+                console.log("count-shouldComponentUpdate")
+                return true
+            }
+            //“快照钩子”
+            getSnapshotBeforeUpdate(){
+                console.log('count-getSnapshotBeforeUpdate')
+                return 'atguigu';
+            }
+            //组件更新完毕的钩子 这个钩子会接收三个个参数 分别为更新前的属性、状态、快照钩子返回的值
+            componentDidUpdate(preProps,preState,snapshot) {
+                console.log('count-componentDidUpdate',preProps,preState,snapshot)
+            }
+            render() {
+                console.log('count-render')
+                let { count } = this.state;
+                return (
+                    <div>
+                        <h2>当前求和为{this.state.count}</h2>
+                        <button onClick={this.add}>点我+1</button>
+                        <button onClick={this.death}>卸载组件</button>
+                        <button onClick={this.force}>强制更新</button>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<Count count ={199}/>, document.getElementById('test'))
+    </script>
+</body>
+
+</html>

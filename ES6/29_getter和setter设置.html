@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //get和set
+        class Phone {
+
+            /* 
+               使用get为price属性被绑定一个函数
+                  当进行读取price属性时将执行函数
+            */
+            constructor(price) {
+                this.price = price
+            }
+
+            get price() {
+                console.log('对象被读取了')
+
+                //读取属性时会读取到return返回的值
+                return '不给你读'
+            }
+
+            /* 
+               使用set为price属性被绑定一个函数
+                   当设置price属性时将执行函数
+               函数定义时至少要有一个形参
+                   想要赋给属性的值会传递给这个形参
+                一个属性不能设置多个set
+           */
+            set price(newVal) {
+                console.log('price被修改了')
+            }
+        }
+
+        let s = new Phone(2000);
+        console.log(s.price)
+
+        s.price = 100
+
+
+        //MDN的例子
+        const language = {
+            set current(name) {
+                this.log.push(name);
+            },
+            log: []
+        };
+
+        language.current = 'EN';
+        language.current = 'FA';
+    </script>
+</body>
+
+</html>

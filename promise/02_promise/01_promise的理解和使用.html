@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.创建一个新的promise
+        //resolve 和 reject 是函数类型
+        //Promise括号内为执行器函数 属于同步回调
+        const p = new Promise((resolve,reject) => {
+        //2.执行异步操作任务
+        console.log('异步任务启动,返回promise对象')
+            setTimeout( () => {
+                const time = Date.now();
+                
+                if (time % 2 ===0){
+                    //3.如果成功了，调用resolve(value)
+                    resolve('成功的数据，time=' + time);
+                }else{
+                    // 如果失败了，调用reject(reason)  
+                    reject('失败的数据，time=' + time) 
+                }
+                
+                console.log('异步任务完成')
+            },1000)
+        
+        })
+        console.log('1')
+        setTimeout(()=>{
+            /* 
+               此处可以体现promise的优势
+               1. 指定回调函数的方式更加灵活: 
+                 旧的: 必须在启动异步任务前指定
+                  promise: 启动异步任务 => 返回promie对象 => 给promise对象绑定回调函数(甚至可以在异步任务结束后指定)
+            */
+            console.log('指定回调函数 取出异步任务结果')
+            p.then(
+            //接收成功的value数据  onResovled
+            value => {  
+               console.log('成功的回调',value)
+               
+            },
+            //接收失败的value数据  onRejected
+            reason => {
+                console.log('失败的回调',reason)
+            }
+        )
+        },5000)
+    </script>
+</body>
+</html>

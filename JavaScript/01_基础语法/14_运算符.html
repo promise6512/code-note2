@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			   运算符也叫操作符
+			   typeof 就是运算符
+			   
+			   算数运算符+-/*
+			         任何值和NaA做运算时，都得NaN
+					+ 任何值和字符串做加法运算都会转换为字符串 再拼串
+					       原理是先调用String()函数再运算
+					       c=c+''可以将其转换为字符串
+						   c=1+2+'3' 33
+						   c='1'+2+3 123
+					  字符串和NaN做加法运算会转换为字符串 再拼串
+			        - 转换为Number再运算
+					* 转换为Number再运算
+					/ 转换为Number再运算
+					       d=d*1
+						   d=d-0
+						   d=d/1 
+						   可以转换为整数，原理和Number()一样
+					% 取余数(模)
+			 */
+			 var a = '1223'-'123';
+			 var b = '456';
+			 console.log(a);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

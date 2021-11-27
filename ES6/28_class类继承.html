@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            constructor(brand,price){
+                this.price = price;
+                this.brand = brand;
+            }
+            call(){
+                console.log('我可以打电话')
+            }
+        }
+        
+        
+        class smartPhone extends Phone {
+            //constructor构造方法
+            constructor(brand,price,size,color){
+                super(brand,price); // 相当于构造函数继承语句 Phone.call(this,age,price)
+                this.color = color;
+                this.size = size;
+            }
+            
+            //创建独有的方法
+            photo(){
+                console.log('我能拍照')
+            }
+            
+
+            //重写父类的方法
+            call(){
+                console.log('我可以视频通话')
+            }
+        }
+        
+
+        //smartPhone 继承了Phone的属性和方法 
+        let xiaomi = new smartPhone('xiaomi',2399,198,'black');
+        xiaomi.call()
+        console.log(Phone)
+        console.log(xiaomi)
+
+        
+        
+
+    </script>
+</body>
+</html>

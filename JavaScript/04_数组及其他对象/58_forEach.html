@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+		         JS为我们提供了一个方法遍历数组
+					  forEach()
+					     -只支持IE8以上的浏览器
+						 -需要一个函数作为作为参数
+						       这种由我们创建但是不由我们调用的函数称为回调函数
+						-数组中有几个函数执行几次
+						   每次遍历时 浏览器会将遍历到的元素以实参的形式传递进来
+						-浏览器会在回调函数中传递三个参数
+						      -第一个参数   就是当前正在遍历的元素的索引
+							  -第二个参数   当前正在遍历的元素的索引
+							  -第三个参数   就是正在遍历的数组
+			 */
+			arr = ['张扬','张大gay','gay宝','杨宝'];
+			arr.forEach(function(value, index, obj){
+				console.log(value)
+			})
+			
+		/* 
+		   forEach map filter find 不改变原数组 只会返回一个新数组
+           fill会改变原数组且返回一个新数组
+		 */
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

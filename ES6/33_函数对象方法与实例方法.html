@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+           下面的Person类中
+               speak为静态方法  定义在类本身中 实例p不存在speak方法
+               speak为实例方法  定义在类的原型中 实例可以调用speak方法
+         */
+        class Person {
+            constructor(name){
+                this.name = name;
+                this.age = 18
+
+            }
+            age = 18;
+            static speak() {
+                console.log(1)
+            }
+            run() {
+                console.log(2)
+            }
+
+        }
+        const p = new Person('张扬');
+        console.log(p)
+        
+        /* 
+            Car 为函数对象  c为实例对象
+            方法：run为函数对象方法  实例c中不存在
+                speak为实例对象方法 定义在Car的prototype中 可以在实例c的__proto__中找到
+            属性  name为实例属性属性  可以在实例中访问(在实例对象本身上而非__proto__中 与方法不同)
+                 speed,color为函数对象属性  实例中不存在
+                 price在函数对象的prototype中 可以在实例c的__proto__中找到
+
+
+        */
+        function Car(name){
+            this.name = name;
+        //    this.prototype.price = price;
+            this.fly = function(){
+                console.log('我不会飞')
+            }
+            Car.speed = 100;
+        }
+        Car.color = 'white'
+        Car.prototype.price = 1000;
+        Car.run = function(){
+            console.log('我会跑')
+        }
+        const c = new Car('奔驰');
+        console.log(c)
+    </script>
+</body>
+
+</html>

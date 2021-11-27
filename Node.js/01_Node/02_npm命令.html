@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* 
+         安装包步骤
+                1.创建package.json
+                   npm init
+                   命名 名字不能大写
+                2.安装包
+                  pm install 包名
+       */
+       
+       /* 
+           npm命令
+                npm -v 
+                    查看npm版本
+                npm -version 
+                    查看所有模块版本
+                npm  search 包名 
+                    搜索包
+                npm  install/i 包名
+                    安装包
+                npm  remove/r 包名
+                    删除包
+                npm install 包名 --save/-S
+                    安装包并添加到依赖中
+                npm install 
+                    下载当前项目所有依赖的包
+                npm install 包名 -g 
+                    全局安装包(全局安装的包一般都是工具)
+                npm install 包名 -D/--dev--save 
+                    安装开发依赖包
+                npm i --production 
+                    安装所有生产环境下依赖的包(供测试使用)
+                npm view 包名 versions
+                    查看包的所有版本
+                npm cache clean --force 
+                    清除缓存
+            npx命令 
+                执行命令时,如果所需的包没有在本地安装,npx就会临时创建一个文件夹,下载包,再执行命令
+                npx不会污染内存环境,适合于一次性命令
+                npx 命令
+                npx --no-install 命令     不安装临时包(如果本地不存在所需包,则命令失败)
+                npx --ignore-existing命令  忽略本地存在的包,安装临时包再执行命令
+        */
+    </script>
+</body>
+</html>

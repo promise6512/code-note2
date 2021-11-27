@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			   使用字面量创建正则表示
+				   语法: var 变量 = /正则表达/匹配模式
+			 */
+			//var reg = /a/i;
+			//console.log(reg.test('aa'));
+			
+			/* 
+			   创建一个正则表达式 检查一个字符串是否有a或b 
+			       使用| 表示或者的意思
+			*/
+		   var reg = /a|b/;
+		   console.log(reg.test('bss'))
+			
+			
+			/* 
+		       [ab] == a|b
+			   [a-z] 任意小写字母
+			   [A-Z] 任意大写字母
+			   [A-z] 任意字母
+			   
+			   检查字符串是否含有abc  adc  或 aec
+			   [a[bde]c]
+			 */
+			var reg = /[^ab]/;
+			console.log(reg.test('babc'))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

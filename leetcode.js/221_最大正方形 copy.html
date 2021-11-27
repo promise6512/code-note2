@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //动态规划
+        var maximalSquare = function (matrix) {
+            //将长度增加1 避免边际判断
+            let cows = matrix.length + 1;
+            let cols = matrix[0].length + 1;
+            let dp = new Array(cows).fill(0).map(()=>new Array(cols).fill(0));
+            let maxLength = 0
+            for(let i = 1;i < cows;i++){
+                for(let j = 1;j < cols;j++){
+                    if(matrix[i-1][j-1] === '1'){
+                        dp[i][j] = Math.min(dp[i-1][j-1],dp[i][j-1],dp[i-1][j])+1;
+                        maxLength = Math.max(maxLength,dp[i][j])
+                    }
+                }
+            }
+            return maxLength*maxLength;
+        };
+        let matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]
+        console.log(maximalSquare(matrix))
+    </script>
+</body>
+
+</html>

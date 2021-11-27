@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #box4{
+            width: 200px;
+            height: 300px;
+            background-color: #bfa;
+            overflow: auto;
+        }
+        #box5{
+            background-color: yellow;
+            height: 800px;
+            width: 200px;
+            
+        }
+    </style>
+    <script>
+        /* 
+            clientWidth
+            clientheight
+               -这两个属性可以获取元素的宽和高(包括内容区和内边距 不包括边框)
+               -这些属性不带px 可以直接用于计算
+               -只读属性 不可修改
+            
+            offsetWidth
+            offsetHeight
+                -获取元素整个高度和宽度,包括内容区 内边距和 边框
+            
+            offsetParent
+                -可以用来获取当前元素的定位父元素
+                -会获取里当前元素最近的开启了定位的祖贤元素(position的值非static)
+            offsetLeft
+                -当前元素相对于其定位父元素的水平偏移量
+            offsetTop 
+                -当前元素相对于其定位父元素的垂直偏移量
+            
+            scrollWidth
+            scrollHeight
+                -可以获取元素整个滚动区域的高度和宽度
+            
+            scrollLeft
+            scrollTop
+                -滚动条滚动的距离
+
+            box4.scrollHeight-box4.scrollTop = clientHeight
+                说明垂直滚动条到底
+            元素.id
+                返回元素的id值
+         */
+        window.onload = function(){
+            var box1 = document.getElementById('box1');
+            var btn01 = document.getElementById('btn01');
+            var box4 = document.getElementById('box4');
+            var box5 = document.getElementById('box5');
+           //alert(btn01);
+            btn01.onclick = function(){
+            //alert(box4.scrollWidth);
+                alert(box4.scrollHeight)
+                alert(box4.clientHeight);
+                alert(box4.scrollTop);
+                alert(box4.scrollHeight-box4.scrollTop)
+            };
+        }
+    </script>
+</head>
+<body>
+    <button id = 'btn01'>就我一下</button>
+    <br> <br>
+    <div id="box1">
+     
+    </div>
+    <div id="box4">
+        <div id="box5"></div>
+    </div>
+</body>
+</html>

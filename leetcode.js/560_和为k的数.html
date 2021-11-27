@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+        var subarraySum = function (nums, k) {
+            let hashMap = new Map();
+            let pre = 0;
+            let res = 0
+            let getHash;
+            let setHash;
+            hashMap.set(pre, 1)
+            for (let i = 0; i < nums.length; i++) {
+                pre += nums[i];
+                getHash = hashMap.get(pre - k);
+                res += getHash ? getHash : 0;
+                let setHash = hashMap.get(pre)
+                hashMap.set(pre, setHash ? setHash + 1 : 1)
+            }
+            console.log(hashMap)
+            return res;
+        };
+        console.log(subarraySum([1,1,1],2))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 220px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /* 
+              拖拽box1元素
+                 -拖拽的流程
+                     1.鼠标按下 开始拖拽 onmousedown
+                     2.鼠标移动时被拖拽元素跟随鼠标移动 onmousemove
+                     3.鼠标松开时       onmouseup
+            */
+           var box1 = document.getElementById('box1');
+           box1.onmousedown = function(){
+               //鼠标按下进行捕获
+                box1.setCapture && box1.setCapture()
+                var ol = event.clientX - box1.offsetLeft;
+                var ot = event.clientY - box1.offsetTop;
+                document.onmousemove = function(event){
+                    var x = event.clientX;
+                    var y = event.clientY;
+                   // var left = getStyle(box1,'left');
+                    box1.style.left = x-ol+'px';
+                    box1.style.top = y-ot+'px';
+                }
+               document.onmouseup = function(){
+                   //鼠标松开释放捕获
+                   box1.releaseCapture&&box1.releaseCapture();
+                   /* 设置为null取消事件 */
+                   document.onmousemove = null;
+                   
+                   document.onmouseup = null;
+               }
+              // return false
+            }
+           function getStyle(obj,name){
+                 if(window.getComputedStyle){
+                     return getComputedStyle(obj , null)[name];
+                 }else{
+                     return obj.currentStyle[name];
+                 }
+            }
+            /* 
+              当我们拖拽一个网页内容时 浏览器会默认去搜索引擎搜索内容
+                  此时会导致拖拽异常
+                  可以通过return false来取消默认行为
+                  但是这招对IE8及以下不起作用
+            */
+        }
+    </script>
+</head>
+<body>
+    我是一段文
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

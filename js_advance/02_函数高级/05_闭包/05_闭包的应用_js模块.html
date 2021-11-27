@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+闭包的应用2 : 定义JS模块
+  * 具有特定功能的js文件
+  * 将所有的数据和功能都封装在一个函数内部(私有的)
+  * 只向外暴露一个包含n个方法的对象或函数
+  * 模块的使用者, 只需要通过模块暴露的对象调用方法来实现对应的功能
+-->
+<script src="./myModule.js"></script> 
+<script src="./myModule2.js"></script>  
+<script>
+    myModule().doSomething = function(){
+      console.log(123)
+    }
+    console.log(myModule().doSomething)
+    var fun1 = myModule().doSomething;
+    fun1()
+    
+    console.log(myModule2)
+    var fun2 = myModule2.doSomething;
+    fun2()
+</script>
+</body>
+</html>

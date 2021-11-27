@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易新闻列表</title>
+    <link rel="stylesheet" href="./resetcss.css">
+    <style>
+        body{
+            background-color: #bfa;
+        }
+        .box1{
+            width: 300px;
+            height: 340px;
+            background-color: white;
+            border-top: 1px solid rgb(190, 186, 186);
+             margin: 50px auto;
+        }
+        .title{
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+        }
+        span{
+            border-top:red 1px solid ;
+            padding-top: 9px;
+        }
+        .title a{
+            color: #404040;
+            /*加粗效果*/
+            font-weight: bold;
+        }
+        .title a:hover{
+            color: red;
+        }
+        .picture img{
+            width: 300px;
+            height: 150px;
+        }
+        .picture{
+            height: 150px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .picture .img-title{
+            color: white;
+            margin-top: -30px;
+            margin-left: 30px;
+            font-weight: bold;
+        }
+        .list{
+            width: 300px;
+            height: 120px;
+            margin-top: 12px;
+        }
+        .list li{
+            width: 300px;
+            height: 30px;
+  
+        }
+        .list a{
+            height: 30px;
+            width:285px;
+            font-size: 14px;
+            line-height: 30px;
+            color: #b3aeae;
+        }
+        .list a:hover{
+            color: red;
+        }
+   
+        .list li::before{
+            content: '●';
+            font-size:12px ;
+            color: thistle;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h2 class="title"><a href="https://sports.163.com/"><span>体育</span></a></h2>
+        <div class='picture'>
+            <a href="https://www.163.com/sports/article/GA5VFHG700058781.html"><img src="./01 素材/d9954209j00qt89qz001vc000go00b4c.jpg" ><h3 class='img-title'>苏神88分钟超燃绝杀！脱衣滑跪庆祝</h3></a>
+           
+        </div>
+        <ul class="list">
+            <li>
+                <a href="https://www.163.com/sports/article/G9UM9SIA00059A81.html">“隐形”的洛杉矶快船：闷声发大财？</a>
+            </li>
+            <li>
+                <a href="https://www.163.com/sports/article/G9S5L9L700058782.html">统治力超博尔特的女人，到死也没能自证清白</a>
+            </li>
+            <li>
+                <a href="https://www.163.com/sports/article/G9S5VB1I0005877U.html">火箭二轮再淘宝！单月场均20分板8！</a>
+            </li>
+            <li>
+                <a href="https://www.163.com/sports/article/G9Q7OJO90005877U.html">乔丹与科比的最后一次对话</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

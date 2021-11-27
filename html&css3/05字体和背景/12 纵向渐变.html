@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+          线性渐变 颜色沿着一条直线发生渐变
+               linear-gradinet()
+
+               linear-gradient(red,yellow) 红色在开头，黄色在结尾，中间过渡区域
+               -线性渐变的开头可以指定一个渐变的方向
+                    to left
+                    to right
+                    to bottom 
+                    to top
+                    deg 表示度数
+                    turn 表示圈
+
+                repeating-linear-gradient()可以平铺的线性渐变
+        */
+        .box1,.box2{
+            width: 200px;
+            height: 200px;
+            margin-bottom: 50px;
+        }
+        .box1{
+            background-image: linear-gradient(0deg,red,yellow);
+        }
+        .box2{
+            background-image: repeating-linear-gradient(red,yellow 50px
+            );
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

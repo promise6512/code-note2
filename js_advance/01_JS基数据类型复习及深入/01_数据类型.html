@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a;
+        console.log(a,typeof a);  //--> undefined "undefined"
+        //注意 typeof打印数据类型的字符串表达
+        console.log(a === undefined,typeof a === 'undefined');
+
+        a = 3;
+        console.log(typeof a === 'number');  //--->true
+
+        a = 'atguigu';
+        console.log(typeof a === 'string');  //--->true
+
+        a = true;
+        console.log(typeof a === 'boolean'); //--->true
+
+        a = null;
+        console.log(a===null);              //--->true
+        
+        var b1 = {
+            b2 : [1,'abc',console.log],
+            b3 : function(){
+                console.log(123)
+            }   
+        };
+        
+        console.log(b1 instanceof Object, b1 instanceof Array)  //--->true false
+        console.log(b1 instanceof  Function )  //--->false
+        console.log(Array instanceof Object)       //--->true
+
+        console.log(b1.b2 instanceof Array, b1.b2 instanceof Object ) //--->true true
+        console.log(b1.b3 instanceof Function, b1.b3 instanceof Object) //--->true true
+        console.log(typeof b1.b3 === 'function')  //--->true
+
+        console.log(typeof b1.b2[2] === 'function') //--->true
+        b1.b3()
+
+        console.log(typeof b1.b2) //--->'object'
+    </script>
+</head>
+<body>
+    <!--
+1. 分类(2大类)
+  * 基本(值)类型
+    * Number: 任意数值
+    * String: 任意文本
+    * Boolean: true/false
+    * undefined: undefined
+    * null: null
+  * 对象(引用)类型
+    * Object: 任意对象
+    * Array: 特别的对象类型(下标/内部数据有序)
+    * Function: 特别的对象类型(可执行)
+2. 判断
+  * typeof:
+    * 可以区别: 数值, 字符串, 布尔值, undefined, function
+    * 不能区别: null与对象, 一般对象与数组   都会返回'object'
+  * instanceof
+    * 专门用来判断对象数据的类型: Object, Array与Function
+  * ===
+    * 可以判断: undefined和null
+-->
+   
+
+</body>
+</html>

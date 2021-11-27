@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+          text-decoration 设置文本修饰
+               可选值:
+                   none 什么都没有
+                   underline 下划线
+                   line-through 删除线
+                   overline  上划线
+          white-space 设置页面如何处理空白
+                可选值:
+                   normal 正常
+                   nowrap 不换行
+                   pre    保留空白
+        */
+        .box1{
+             font-size: 50px;     
+        }
+        /* 为文本设置省略号样式*/
+        .box2{
+             white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div class="box2">dddddd ddd
+        a                a
+        dddaaaaaaaaa aaaaaa aaaaaa aaaa aaaa yyyyyyyy ggggggggggggggyyyy ggggggggggggg ss kkkkkkkkk nnnnnnnnnnnn nn ggggggggggg llllllllllllllllllll mmmmmmmmmmmmmmn </div>
+    <div class="box1">
+           
+           今天天气真不错
+    </div>
+</body>
+</html>

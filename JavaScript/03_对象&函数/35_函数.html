@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+		       函数
+				  -函数也是一个对象
+				  -函数中可以封装一些功能(代码)，在需要的时候执行
+				  -函数中可以保存一些代码在需要的时候使用
+			*/
+		   //创建一个函数对象
+		   //可以将要封装的代码以字符串的形式传递给构造的函数
+/* 		   var fun = new Function("console.log(12345)");
+		   //console.log(fun)
+		   
+		   //调用函数
+		   fun()
+		   fun() */
+		   
+		   /* 
+		     我们在实际开发中很少使用构造函数来创建一个函数对象
+		   */
+		   
+		   /* 
+		     使用函数声明来创建一个对象
+			    语法:
+				   function 函数名([形参1,形参2,形参3])
+		   */
+		    fun();
+			function fun(){
+				console.log('这是我的第二个函数');
+				document.write('h');
+			}
+			fun();
+			
+			/* 
+			    使用函数表达式来创建一个函数
+				var 函数名 = function([形参1,形参2,形参3]){
+					sentence...
+				}
+			 */
+			
+			var fun1 = function(){
+				console.log('11111');
+			};
+			fun1();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

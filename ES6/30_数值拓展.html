@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* 
+           0.Number.EPSILON 是JavaScript最小精度
+               EPSILON 属性的值接近于 2.2204460492503130808472633361816E-16
+               当两个数的差值小于Number.EPSILON时则认为相等
+        */
+        console.log(0.1+0.2==0.3)  //--->false
+
+        //声明一个函数 用于判断浮点数是否相等
+        let equal = (a,b) => {
+            return Math.abs(a-b) <= Number.EPSILON;
+        }
+        console.log(equal(0.1+0.2,0.3))  //--->true
+
+        //1.二进制和八进制
+        let b = 0b1010;
+        let o = 0o777;
+        let x = 0xff;
+        console.log(b)
+
+        //2.Number.isFinite() 检测一个数值是否为有限数
+        console.log(Number.isFinite(1/0)) //-->false
+
+        console.log(Number.isFinite(Infinity))
+
+        //3.Number.isNaN() 检测一个数值是否为NaN
+        console.log(Number.isNaN('12'))  //-->false
+
+        /* 
+        4.Number.parseInt() Number.parseFloat()
+			-parseInt()   把一个字符串转换为一个整数，可以取整
+			-parseFloat() 把一个字符串转换为浮点数
+			对非string使用时，会先转换成string 然后再操
+        */
+       
+        //5.Number.isInteger() 判断是否为整数
+        console.log(Number.isInteger(0))  //--->true
+        console.log(Number.isInteger('12'))
+        
+        //6.Math.trunc() 将数字的小数部分抹除
+
+        /* 
+           7.Math.sign() 
+                判断正负
+                正数 返回1
+                负数 返回-1
+                0    返回0
+        */
+       console.log(Math.sign(100))
+
+
+    </script>
+</body>
+</html>

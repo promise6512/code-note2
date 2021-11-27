@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城 - 小米11 Ultra、Redmi K40 Pro、MIX FOLD，小米电视官方网站</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../exercise/resetcss.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!--
+        设置网站的图标
+            -网站的图标一般存储在网站的根目录下，名字一般叫favicon.ico
+    -->
+    <link rel="icon" href="./素材/favicon.ico">
+</head>
+<body>
+    <!--创建顶部导航条-->
+    <div class="topbar-wrapper clearfix">
+        <div class="topbar w">
+            <ul class="service">
+                <li><a href="">小米商城</a></li>
+                <li class="line">|</li>
+                <li><a href="">MIUI</a></li>
+                <li class="line">|</li>
+                <li><a href="">IoT</a></li>
+                <li class="line">|</li>
+                <li><a href="">云服务</a></li>
+                <li class="line">|</li>
+                <li><a href="">天星数科</a></li>
+                <li class="line">|</li>
+                <li><a href="">有品</a></li>
+                <li class="line">|</li>
+                <li><a href="">小爱开放平台</a></li>
+                <li class="line">|</li>
+                <li><a href="">企业团购</a></li>
+                <li class="line">|</li>
+                <li><a href="">资质证照</a></li>
+                <li class="line">|</li>
+                <li><a href="">协议规则</a></li>
+                <li class="line">|</li>
+                <li class="app-wrapper"><a class='app' href="">
+                        下载app
+                        <!--添加一个弹出层-->
+                        <div class="qrcode">
+                            <img src="./img/download.png" alt="">
+                            <span>小米商城APP</span>
+                        </div>
+                    </a></li>
+                <li class="line">|</li>
+                <li><a href="">智能生活</a></li>
+                <li class="line">|</li>
+                <li><a href="">Select Location</a></li>
+            </ul>
+            <ul class="shop-car">
+                <a href="">
+                    <i class='fas'>&#xf07a;</i>&nbsp;&nbsp;购物车(0)
+                    <div class="shop-car-box">你的购物车中还没有商品，赶紧购买吧！</div>
+                </a>
+            </ul>
+            <ul class="user-info">
+                <li><a href="">登录</a></li>
+                <li class="line">|</li>
+                <li><a href="">注册</a></li>
+                <li class="line">|</li>
+                <li><a href="">消息通知</a></li>
+            </ul>
+        </div>
+        <!--创建头部容器-->
+        <div class="header-wrapper">
+            <div class="header w">
+                <h1 class="logo">
+                    <a href="/" class="mi"></a>
+                    <a href="/" class="huawei"></a>
+                </h1>
+                <!--中间导航条的容器-->
+                <div class="nav-wrapper clearfix">
+                    <ul class="nav clearfix">
+                        <li class="all-goods-wrapper"><a class='all-goods' href="#">全部商品分类</a>
+                            <div class="goods-info">
+                            </div>
+                            <!--创建左侧的导航菜单-->
+                            <ul class="left-menu">
+                                <li><a href="http://jwbinfosys.zju.edu.cn/">手机 电话卡<i class="fas fa-angle-right"></i></a>
+                                </li>
+                                <li><a href="#">电视 盒子<i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="#">笔记本 显示器<i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="#">家电 插线板<i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="#">出行 穿戴<i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="#">智能 路由器<i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="#">电源 配件<i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="#">健康 儿童<i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="#">耳机 音箱<i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="#">生活 箱包<i class="fas fa-angle-right"></i></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://course.zju.edu.cn/">小米手机</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                        <li><a href="#">Redmi红米</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                        <li><a href="#">电视</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                        <li><a href="#">笔记本</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                        <li><a href="#">家电</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                        <li><a href="#">路由器</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                        <li><a href="#">智能硬件</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                        <li><a href="#">服务</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                        <li><a href="#">社区</a>
+                            <div class="goods-info">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--创建搜索框的容器-->
+                <div class="search-wrapper">
+                    <form action="#">
+                        <input class='search-inp' type="text">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--创建banner容器-->
+        
+    </div>
+    <div class="banner-wrapper">
+        <div class="banner w">
+            <ul class="img-list">
+                <li>
+                    <a href=""><img src="./素材/mi1.jpeg"></a>
+                </li>
+                <li>
+                    <a href=""><img src="./素材/mi2.jpg"></a>
+                </li>
+                <li>
+                    <a href=""><img src="./素材/mi3.jpg"></a>
+                </li>
+            </ul>
+            <div class="pointer">
+                <a href="" class="pointer1"></a>
+                <a href="" class="pointer2"></a>
+                <a href="" class="pointer3"></a>
+                <a href="" class="pointer4"></a>
+                <a href="" class="pointer5"></a>
+            </div>
+            <div class="pre-next">
+                <a href="#" class="pre"></a>
+                <a href="#" class="next"></a>
+            </div>
+        </div>
+    </div>
+    <!--固定定位的工具条-->
+    <div class="back-top"></div>
+    <!--创建广告容器-->
+    <div class="ad w">
+        <ul class="shortcut">
+            <li>
+                <a href=""><i class="fas fa-clock"></i>小米秒杀</a>
+            </li>
+            <li>
+                <a href=""><i class="fas fa-building"></i>企业团购</a>
+            </li>
+            <li>
+                <a href=""><i class="fas fa-robot"></i>F码通道</a>
+            </li>
+            <li>
+                <a href=""><i class="fas fa-frog"></i>米粉卡</a>
+            </li>
+            <li>
+                <a href=""><i class="fas fa-keyboard"></i>以旧换新</a>
+            </li>
+            <li>
+                <a href=""><i class="fas fa-sim-card"></i>话费充值</a>
+            </li>
+        </ul>
+        <ul class='shortcut1'>
+            <li><a href=""><img src=".//素材/miad1.jpg"></a></li>
+            <li><a href=""><img src=".//素材/miad2.jpg"></a></li>
+            <li><a href=""><img src=".//素材/miad3.jpg"></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let matrix = [[1,1,1],[1,0,1],[1,1,1]];
+    var setZeroes = function (matrix) {
+      //标记第一行
+      let flagRow0 = false;
+      //标记第一列
+      let flagCol0 = false;
+      for (let i = 0; i < matrix.length; i++) {
+        if (matrix[i][0] === 0) {
+          //第一行有0
+          flagCol0 = true;
+          break
+        }
+      }
+
+      for (let j = 0; j < matrix[0].length; j++) {
+        if (matrix[0][j] === 0) {
+          //第一列有0
+          flagRow0 = true;
+          break;
+        }
+      }
+
+      for (let i = 1; i < matrix.length; i++) {
+        for (let j = 1; j < matrix[0].length; j++) {
+          if (matrix[i][j] === 0) {
+            matrix[0][j] = 0;
+            matrix[i][0] = 0;
+          }
+        }
+      }
+
+      for (let i = 1; i < matrix.length; i++) {
+        for (let j = 1; j < matrix[0].length; j++) {
+          if (matrix[0][j] === 0 || matrix[i][0] === 0) {
+            matrix[i][j] = 0;
+          }
+        }
+      }
+
+      if (flagCol0) {
+        for (let i = 0; i < matrix.length; i++) {
+          matrix[i][0] = 0;
+        }
+      }
+
+      if (flagRow0) {
+        for (let j = 0; j < matrix[0].length; j++) {
+          matrix[0][j] = 0;
+        }
+      }
+    };
+    setZeroes(matrix);
+    console.log(matrix)
+  </script>
+</body>
+
+</html>

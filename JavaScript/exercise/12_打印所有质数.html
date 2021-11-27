@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>打印所有质数</title>
+		<script type="text/javascript">
+			//打印1-100之间的所有质数
+			//document.write(2+'<br>')
+			console.time('test')
+			for(var i = 2;i <= 100000;i++){
+				var flag = true;
+				for(var j = 2;j <= Math.sqrt(i);j++){
+					if(i%j == 0){
+						flag = false
+						break
+					}
+				}
+				if(flag){
+					//document.write(i+'<br>');
+				}
+			}
+			console.timeEnd('test')
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

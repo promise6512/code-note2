@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			   电子邮件  
+				  任意字母数字下划线.任意字母数字下划线@ 任意字母数字.任意字母(2-5).任意字母(2-5)
+			 */
+			var reg = /^\w{3,}(\.\w+)*@([A-z0-9])*\.([A-z0-9]){2,5}(\.([A-z0-9]){2,5})?$/;
+			//var reg = /^\w{3,}(\.\w+)*@([A-z0-9])+(\.([A-z0-9]){2,5}){1,2}$/;
+			var result = reg.test('123@qq.com.123');
+			console.log(result);
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

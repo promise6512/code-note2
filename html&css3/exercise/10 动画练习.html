@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+             width: 100px;
+             height: 100px;
+             margin: 0 auto;
+             background-image:url('./素材/trump_run.png') ;
+             animation: 1s steps(5) infinite;
+        }
+        .box1{
+            animation:run1 1s steps(5) infinite;
+        }
+        .box2{
+            animation:run2 1s steps(5) infinite;
+        }
+        .box3{
+            animation:run3 1s steps(5) infinite;
+        }
+        .box4{
+            animation:run4 1s steps(5) infinite;
+        }
+        /*创建关键帧*/
+        @keyframes run1{
+            from{
+                background-position: 0 0px;
+            }
+            to{
+                background-position: -500px 0px;
+            }
+        }
+        @keyframes run2{
+            from{
+                background-position: 0 100px;
+            }
+            to{
+                background-position: -500px 100px;
+            }
+        }
+        @keyframes run3{
+            from{
+                background-position: 0 200px;
+            }
+            to{
+                background-position: -500px 200px;
+            }
+        }
+        @keyframes run4{
+            from{
+                background-position: 0 300px;
+            }
+            to{
+                background-position: -500px 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

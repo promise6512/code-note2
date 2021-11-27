@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 300px;
+            height: 800px;
+            border: 10px red solid;
+            display: flex;
+            flex-wrap: wrap;
+             /* align-items: center; */
+            align-content: space-around;
+        }
+        li{
+            width: 100px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+        }
+        li:nth-child(2){
+            background-color: pink;
+            /* flex-grow: 2; */
+        }
+        li:nth-child(3){
+            background-color: orange;
+            /* flex-grow: 3; */
+        }
+        li:nth-child(4){
+            background-color: orange;
+            /* flex-grow: 2; */
+        }
+        li:nth-child(5){
+            background-color: chocolate;
+            /* flex-grow: 3; */
+        }
+        li div{
+            font-size: 10px;
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        flex(弹性盒)
+            -是css中的又一种布局手段，它主要用来代替浮动完成页面布局
+            -flex可以使元素具有弹性，让元素可以跟随页面大小改变
+            -弹性容器
+                -要使用弹性盒，必须先将一个元素设置为弹性容器
+                -通过display设置弹性容器
+                    display:flex 设置块级弹性容器
+                    display:inline-flex 设置行内弹性容器
+            -弹性元素
+                -弹性容器的子元素(直接子元素，后代不算)是弹性元素(弹性项)
+                -一个元素可以同时弹性容器和弹性元素
+            -弹性容器的属性
+                flex-direction 指定容器中弹性元素的排列方式
+                    可选值 
+                        row 默认值，弹性元素在容器中水平排列(左向右)
+                            -主轴 自左向右
+                        row-reverse   弹性元素在容器中反向水平排列(右向左)
+                           -主轴 自右向左
+                        column ，弹性元素方向纵向排列
+                        column-reverse 弹性元素反向纵向排列(自下向上)
+                flex-wrap 设置弹性元素是否在弹性容器自动换行
+                    可选值:
+                        nowrap 默认值，元素不会自动换行
+                        wrap   元素沿着辅轴方向自动换行
+                        wrap-reverse 元素沿着辅轴反方向换行
+                flex-flow 可以同时设置wrap和direction，没有顺序要求
+                 flex-flow:row wrap;
+                justify-content 指定如何分配主轴上的空白空间
+                   -可选值:
+                        flex-start 元素沿着主轴始边排列
+                        flex-end   元素沿着主轴终边排列
+                        center     元素居中排列 
+                        space-around 空白分布在元素的两侧
+                        space-between 空白分布在元素之间
+                        space-evenly  空白分布在元素的单侧(兼容性不好)
+                align-items  元素在辅轴上如何对齐(元素间的关系)
+                   -可选值:
+                        stretch  默认值,将元素长度设置为相等同的值
+                        flex-start  元素不会拉伸，沿着辅轴起边对齐
+                        flex-end     元素沿着终边对齐
+                        center      居中对齐
+                        baseline    基线对齐
+                align-content:辅轴空白空间的分配
+                        flex-start 元素沿着辅轴始边排列
+                        flex-end   元素沿着辅轴终边排列
+                        center     元素居中排列 
+                        space-around 空白分布在元素的两侧
+                        space-between 空白分布在元素之间
+                        space-evenly  空白分布在元素的单侧(兼容性不好)
+                 
+                主轴:
+                   弹性元素的排列方向称为主轴
+                侧轴: 
+                   与主轴垂直的方向称为侧轴
+        
+            -弹性元素的属性
+                flex-grow 指定元素的伸展的系数
+                    -当父元素有多余的空间时子元素如何伸展
+                    -父元素的剩余空间，会按照比例进行分配
+                flex-shrink 指定弹性元素的收缩系数
+                    -当元素中的空间不足以容纳所有的子元素时，对子元素收缩
+                align-self 用来覆盖当前弹性元素上的align-items
+                     
+     -->
+     <ul>
+         <li>1</li>
+         <li>2
+             <div>2</div>
+         </li>
+         <li>3
+             <div>3</div>
+             <div>3</div>
+         </li>
+         <li>1</li>
+         <li>2
+             <div>2</div>
+         </li>
+     </ul>
+</body>
+</html>

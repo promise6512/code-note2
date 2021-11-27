@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+          动画
+             动画和过渡类似，都是可以实现一些动态的效果
+                 不同的是动画可以自动触发
+             设置动画效果，必须先要设置一个关键帧
+        */
+        @keyframes test{
+            /*from表示开始位置，to表示结束位置*/
+            from{margin-left: 0;}
+            to{margin-left: 700px;}
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            overflow: hidden;
+        }
+
+        .box1 div {
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+            margin-left: 0;
+        }
+
+        .box2 {
+            background-color: #bfa;
+            /*
+              设置box2动画
+              animation-name 要对当前元素生效的关键帧的名字
+            */
+            animation-name: test;
+            /*必须指定时间*/
+            animation-duration: 4s;
+            animation-delay: 1;
+            animation-timing-function: linear;
+            /*以上三个属性使用规则与transition一样*/
+
+            /*
+              animation-iteration-count指定动画执行的次数
+                  用infinite表示无限执行
+            */
+            animation-iteration-count: infinite;
+            /*
+            animation-direction
+                 指定动画运行的方向
+                   可选值
+                   normal  默认值 从from到to
+                   reverse 从to到from
+                   alternative 从from到to运行 重复执行动画时反向执行
+                   alternative-reverse 从to到from运行 重复执行动画时反向执行
+            */ 
+            /*
+               animation-fill-mode
+                    可选值:
+                        none 默认值 动画执行完毕元素回到原来位置
+                        forwards   动画执行完毕元素回到结束的位置
+                        backwards  动画延时等待时间，元素就会开始位置
+                        both       结合了forwards和backws的特点
+            animation:test 2s 2 1s alternative;
+               除了时间 其他没有顺序要求
+            */
+        animation-fill-mode:none ;
+        }
+        /* 
+           animation-play-state 通过指定动作控制动画的暂停和开始
+        */
+        .box1:hover div{
+                animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

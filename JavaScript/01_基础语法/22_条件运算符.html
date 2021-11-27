@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			  条件运算符也叫三元运算符
+			    语法:
+			        条件表达式?语句1:语句2;
+				
+			 */
+			var a = 20;
+			var b = 10;
+			var c = 50;
+		    //true?alert('语句1'):alert('语句2')
+			// 获取a和b的最大值
+			//var max = a > b ? a: b;
+			var max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+			console.log("max = "+max)
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

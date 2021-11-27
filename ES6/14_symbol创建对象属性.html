@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* let game = {
+            name:'俄罗斯方块',
+            up: function(){},
+            down: function(){}
+        };
+
+        //向对象添加方法
+        let methods = {
+            up:Symbol(),
+            down:Symbol()
+        };
+
+        game[methods.up] = function(){
+            console.log(123)
+        }
+        game[methods.down] = function(){
+          console.log(234)  
+        }
+
+        game[Symbol('1')] = function(){
+            alert(123)
+        }
+
+        game[Symbol('1')] = function(){
+            alert('abc')
+        }
+
+        console.log(game[Symbol()])
+
+        let game2 = {
+            name:'狼人杀',
+            [Symbol('say')]:function(){
+                console.log('我可以自保')
+            }
+        } */
+
+
+        //作为属性名
+        let mySymbol = Symbol('a');
+        let mySymbol2 = Symbol('b')
+        //写法一
+        var obj1 = {};
+        obj1[mySymbol] = 'hello！'
+
+        //写法二
+        let obj2 = {
+            [mySymbol] : 'hello',
+            [mySymbol2] : 'hi'
+        }
+
+        var objSym = Object.getOwnPropertySymbols(obj2);
+        console.log(objSym)
+
+    </script>
+</body>
+</html>

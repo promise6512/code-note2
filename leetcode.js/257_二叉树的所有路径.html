@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+
+    function TreeNode(val, left, right) {
+      this.val = (val === undefined ? 0 : val)
+      this.left = (left === undefined ? null : left)
+      this.right = (right === undefined ? null : right)
+    }
+
+    var binaryTreePaths = function (root) {
+      let path = [];
+      let res = [];
+      const searchPath = (node) => {
+        if (!node.left && !node.right) {
+          //node为叶节点.
+          res.push(path.join("->") + "->" + node.val)
+          return
+        }
+        if (node.left) {
+          path.push(node.val);
+          searchPath(node.left);
+          path.pop()
+        }
+        if (node.right) {
+          path.push(node.val);
+          searchPath(node.right);
+          path.pop()
+        }
+      }
+      searchPath(root);
+      return res;
+    };
+
+
+  </script>
+</body>
+
+</html>

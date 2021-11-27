@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+        [属性名] 选择含有制定属性的元素
+        [属性名=属性值] 选择含有指定属性值的元素
+        [属性名^=属性值] 选择属性值以指定值开头的
+        [属性名$=属性值] 选择属性值以指定值结尾
+        [属性名*=属性值] 选择属性值中含有指定值结尾
+        */
+       /* [title="abc"]{color: brown;}*/
+       [title^='abc']{color: rgb(222, 135, 255);}
+       [title$='abc']{color:chocolate}
+       [title*='abc']{font-size: 50px;}
+    </style>
+</head>
+<body>
+    <h1 title="abcde">标题</h1>
+    <p title="abcd">大不自多</p>
+    <p title="helloabc">海纳江河</p>
+    <p >为学无际</p>
+    <p>际于天地</p>
+    <p >形上谓道兮</p>
+    <p ></p>形下谓器</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //扩展运算符能将 数组/伪数组 转换为逗号分隔的参数序列
+        const arr = [0,1,2];
+
+        //声明一个函数
+        function number(){
+            console.log(arguments)
+        }
+        number(...arr)
+
+    </script>
+</body>
+</html>

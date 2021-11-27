@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+        body {
+            height: 1000px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById('box1');
+            function Wheel(obj,upfun,downfun) {
+                obj.onmousewheel = function(){
+                    if(event.wheelDelta > 0 || event.Detail < 0){
+                        upfun();
+                    }else{
+                        downfun();
+                    };
+                    return false
+                    event.preventDefault()
+
+                }
+                //bind用于兼容火狐 
+                bind(obj, 'DOMMouseScroll', obj.onmousewheel)
+                
+                function bind(obj, eventStr, callback) {
+                    if (obj.addEventListener) {
+                        obj.addEventListener(eventStr, callback, false);
+                    } else {
+                        obj.attachEvent('on' + eventStr, function () {
+                            callback.call(obj);
+                        })
+                    }
+                }
+
+            }
+            //WheelChangeSiz用于滚动改变元素大小
+            /* function WheelDirection(upfun,downfun){
+                if(event.wheelDelta > 0|| event.detail < 0){
+                    upfun()
+                }else{
+                    downfun()
+                }
+            } */
+            Wheel(box1,function(){
+                box1.style.height = box1.clientHeight - 10 + 'px'; 
+            },function(){
+                box1.style.height = box1.clientHeight + 10 + 'px'; 
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>

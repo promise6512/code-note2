@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			    实参可以是任意的数据类型 也可以是一个对象
+				 当我们的参数过多时，可以将参数封装到一个对象中，然后通过对象进行传递
+				
+				
+			 */
+			function sayHello(object){
+				console.log('我是'+object.name
+				             +',我是个'+object.gender
+							 +',我今年'+object.age
+							 +',我住在'+object.address);
+			}
+			var obj = {
+				name:'猪八戒',
+				age:18,
+				gender:'男人',
+				address:'高老庄'
+			};
+			sayHello(obj)
+			
+			/* 
+			   实参也可以是一个函数
+			 */
+			function fun(a){
+				a(obj)
+			}
+			fun(sayHello);
+			/* 
+			    function circleArea(radius){
+			    	return 3.1415926*radius*radius
+			    }
+				circleArea() 
+				     -调用函数
+					 -相当于函数的返回值
+				circleArea   
+				     -函数对象
+					 -相当于直接使用函数的对象
+			 */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

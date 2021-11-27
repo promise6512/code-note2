@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* function TreeNode(x) {
+    this.val = x;
+    this.left = null;
+    this.right = null;
+} */
+    function Convert(pRootOfTree) {
+      let head = null; //指向链表首节点
+      let pre = null; //指向遍历节点的上一节点
+      const dfs = (root) => {
+        if (!root) return;
+        dfs(root.left);
+        root.left = pre;
+        if (!pre) {
+          head = root; //root是最小节点
+        } else {
+          pre.right = root;
+        }
+        pre = root;
+        dfs(root.right);
+      }
+      dfs(pRootOfTree);
+      return head;
+    }
+  </script>
+</body>
+
+</html>

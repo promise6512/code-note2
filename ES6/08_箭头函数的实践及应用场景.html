@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        .pink{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad"></div>
+    <script src="./tools.js"></script>
+    <script>
+        let ad = document.getElementById('ad');
+        ad.addEventListener('click',function(){
+            setTimeout(() => {
+               // console.log(this)
+                addClass(this,'pink')
+            },2000)
+            
+        })
+
+        //从数组中返回偶数元素
+        arry = [1,2,3,4,5,6,7,8];
+        let result = arry.filter(item => item % 2 == 0)
+        console.log(arry,result)
+
+        //箭头函数适合与this无关的调用  如定时器和数组方法的回调
+        //箭头函数不适合与this有关的回调 事件的回调 对象方法
+        let name = 'zy';
+        let obj = {
+            name:'hjp',
+            getName:() =>{
+                console.log(this.name)
+            },
+            getName2:function(){
+                console.log(this.name)
+            }
+        }
+        obj.getName()
+        obj.getName2()
+    </script>
+</body>
+</html>

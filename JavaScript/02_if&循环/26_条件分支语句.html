@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			   switch语句
+			      语法:
+				     switch(条件表达式){
+						 case 表达式:
+						     语句
+							 break;
+						 case 表达式:
+						     语句
+							 break;
+						default:
+						     语句
+							 break;
+					}
+				执行流程:
+				   switch...case...语句
+				   在执行时会依次将case后的表达式的值和switch后的表达式的值进行全等比较
+				       如果比较结果为true，则从当前case处执行代码
+					       当前case后的代码都会执行
+						   使用break会退出switch语句
+					   如果结果为false，则继续向下比较
+					   如果所有结果都为false，则执行default语句
+			 */
+			var num=3;
+			switch(num){
+				case 1:
+				console.log(1)
+				
+				case 2:
+				console.log(2)
+				break;
+				default:
+				console.log("不是一也不是二")
+				break;
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

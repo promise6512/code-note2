@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//创建正则表达式 用来检查一个字符串是否为一个合法手机号
+			/* 
+			   手机号规则
+			     1.11位
+				 2.以1开头
+				 3.3-9开头
+				 4.三位以后任意数
+			 */
+			var reg = /^1[3-9][0-9]{9}$/;
+			console.log(reg.test('13811866512'));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

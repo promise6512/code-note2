@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//打印所有水仙花数
+			for(var i = 100;i <= 999;i++){
+				var hun = parseInt(i/100);
+				var ten = parseInt(i/10)%10;
+				/* console.log("ten = "+ten); */
+				var sin = i % 10; 
+				
+				
+				 if(sin*sin*sin + ten*ten*ten + hun*hun*hun == i){
+					console.log(i)
+				} 
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../html&css3/bilibili/resetcss.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer{
+            width: 520px;
+            height: 333px;
+            margin: 50px auto;
+            background-color: #bfa;
+            padding: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .imgList{
+            width: 2600px;
+            position: absolute;
+        }
+        .imgList li{
+            float: left;
+            margin: 0px 10px;
+        }
+        .navDiv{
+            position: absolute;
+        /*     background-color: blue; */
+            display: flex;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+
+
+        }
+        .navDiv>a{
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            margin-right: 6px;
+            opacity: 0.5;
+            /* 兼容IE8及以下透明 */
+            filter: alpha(opacity = 50);
+        }
+    </style>
+    <script src="../tools.js"></script>
+    <script>
+        window.onload = function(){
+            var imgList = document.querySelectorAll('ul.imgList')[0];
+           // alert(imgList.innerHTML)
+            var imgArr = document.getElementsByTagName('img');
+            imgList.style.width = 520*imgArr.length+'px';
+            
+            /* 获取所有的a标签 */
+            var allA = document.querySelectorAll('.navDiv>a');
+            var aIndex = 0;
+            allA[aIndex].style.backgroundColor = 'black';
+
+            //为所有超链接设置单击响应函数
+            for(var i = 0; i < allA.length; i++){
+                 //获取索引
+                allA[i].index = i;
+                allA[i].onclick = function(){
+                    Move(imgList,'left',320,-520*(this.index));
+                    allA[aIndex].style.backgroundColor = 'red'; 
+                    aIndex = this.index
+                    allA[aIndex].style.backgroundColor = 'black'; 
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 创建外部容器 -->
+    <div class="outer">
+        <ul class="imgList">
+            <li>
+                <img src="../图片切换练习/img/1.jpg">
+            </li>
+            <li>
+                <img src="../图片切换练习/img/2.jpg">
+            </li>
+            <li>
+                <img src="../图片切换练习/img/3.jpg">
+            </li>
+            <li>
+                <img src="../图片切换练习/img/4.jpg">
+            </li>
+            <li>
+                <img src="../图片切换练习/img/5.jpg">
+            </li>
+        </ul>
+        <div class="navDiv">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+
+    </div>
+</body>
+
+</html>

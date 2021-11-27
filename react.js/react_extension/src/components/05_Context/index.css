@@ -1,0 +1,13 @@
+.parent{
+  width: 500px;
+  border: 2px black solid;
+}
+.child{
+  width: 400px;
+  border: 2px orange solid;
+}
+.grand{
+  width: 50%;
+  border: 2px blue solid;
+  
+}

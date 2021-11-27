@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+           生成器是一个特殊的函数的函数
+           异步编程  纯回调函数  node fs ajax mongodb
+         */
+         function * gen(){
+             console.log(111)
+             yield '一只没有耳朵'
+             console.log(222)
+             yield '一只没有眼睛 ' //yiled 是函数代码的分隔符  yield的内容会next返回值
+             console.log(333)
+         }
+         let iterator = gen();
+        // console.log(iterator)
+        /*  iterator.next()
+         iterator.next()
+         iterator.next() */
+
+        /*  console.log(iterator.next())
+         console.log(iterator.next())
+         console.log(iterator.next())
+ */
+         for(let v of iterator){
+             console.log(v)
+         }
+    </script>
+</body>
+</html>

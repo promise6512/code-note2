@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var num1 = prompt("请输入第一个值")
+			var num2 = prompt("请输入第二个值")
+			var num3 = prompt("请输入第三个值")
+			if(num1>=num2 && num1>=num3){
+				var max=num1;
+				if(num2>=num3){
+					var mid=num2;
+					var min=num3;
+				}else{
+					var mid=num3;
+					var min=num2;
+				}
+			}else if(num2>num1 && num2>=num3){
+			    var max=num2;
+				if(num1>=num3){
+					var mid=num1;
+					var min=mum3;
+				}else{
+					var mid=num3;
+					var min=num1;
+				}
+			}else{
+				var max=num3;
+				if(num1>=num2){
+					var mid=num1;
+					var min=num2
+				}else{
+					var mid=num2
+					var min=num1
+				}
+			}
+			console.log("max = "+max+",mid = "+mid+",min = "+min);
+			console.log(max);
+			console.log(mid);
+			console.log(min);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

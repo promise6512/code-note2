@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //实例又称实例对象
+        //类型又称类型对象
+        function Person(name,age){
+            this.name = name,
+            this.age = age
+        }
+
+        var p = new Person();
+        /* 
+            Person 
+               -为构造函数 称为类、类型、类型对象
+            p 
+               -根据类型创建的实例对象
+        */
+        
+
+        /* 
+           undefined 和 null 的区别
+
+           undefined 代表定义未赋值
+           null      定义并赋值了 只是值为null
+        */
+
+        var a = null;
+        var b = null;
+       // alert(a==b)  //--->true
+
+        /* 
+           null的作用
+               初始赋值为null  表明该变量为null
+               不需要再使用的对象赋值为null 进行垃圾回收
+        */
+
+        var a = {
+             name:'hjp'
+         }
+        console.log(a)
+        var b = a;
+        a = null;
+        console.log(b)
+
+        /* 
+           严格区别对象类型和数据类型
+              js的变量本身是没有类型的, 变量的类型实际上是变量内存中数据的类型
+                变量类型:
+                    基本类型: 保存基本类型数据的变量
+                    引用类型: 保存对象地址值的变量
+                数据对象
+                    基本类型
+                    对象类型
+          
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

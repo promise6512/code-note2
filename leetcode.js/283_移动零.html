@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //双指针
+        var moveZeroes = function (nums) {
+            let m = 0;
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i] !== 0) {
+                    //[nums[i],nums[m]] = [nums[m],nums[i]];
+                    let tmp = nums[i];
+                    nums[i] = nums[m];
+                    nums[m] = tmp;
+                    m++
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* 
+          instanceof判断原理
+             如果B函数的显式原型对象在A对象的原型链上 返回true 否则返回false
+       */
+      console.log(Object instanceof Function) //---> true
+      console.log(Object instanceof Object) //---> true
+      console.log(Function instanceof Object) //---> true
+      console.log(Function instanceof Function) //---> true
+    </script>
+</body>
+</html>

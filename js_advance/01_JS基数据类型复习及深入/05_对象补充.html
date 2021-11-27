@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+           4. 如何访问对象内部数据?
+               属性名: 编码简单, 但有时不能用
+               ['属性名']: 编码麻烦, 但通用
+        */
+       /* 
+           只能使用['属性名访问的情况']
+               1.属性名包含特殊字符: - 空格
+               2.属性名不确定
+       */
+       var p = {
+           a_b : 123
+       }
+       p['content type'] = 'hjp';
+       
+       var property = 'name'
+       p[property] = 'zy';
+
+       console.log(p)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

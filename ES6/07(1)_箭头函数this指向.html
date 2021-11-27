@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+			speak =function(){
+				return ()=>console.log(this)//箭头函数中this继承自外部speak函数
+			}
+		}
+
+		p1 = new Person();
+		p1.speak()()      //speak通过方法调用 this指向Person的实例
+		fun = p1.speak
+
+		fun()()   //fun指向speak函数 调用fun相对于直接调用speak ， this指向undefined
+        
+		fun2 = p1.speak()  //以方法形式调用speak speak的this指向Person实例 箭头函数this继承了之
+		fun2() 
+    
+    //以下输出均为undefined    
+    /*     class Person{
+			speak =function(){
+				return function(){
+                    console.log(this)
+                }
+			}
+		}
+        let p1 = new Person()
+		p1.speak()()      
+		fun = p1.speak
+
+		fun()()   
+        
+		fun2 = p1.speak()  
+		fun2() */
+    </script>
+</body>
+</html>

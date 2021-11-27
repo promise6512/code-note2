@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var containsNearbyAlmostDuplicate = function (nums, k, t) {
+      let hashMap = new Map();
+      for (let i = 0; i < nums.length; i++) {
+        if (hashMap.has(nums[i]) && Math.abs(hashMap.get(nums[i]) - i) <= k) return true;
+        for (let j = nums[i] - t; j <= nums[i] + t; j++) {
+          hashMap.set(j, i)
+        }
+      }
+      return false;
+    };
+    //console.log(containsNearbyAlmostDuplicate([1,2,3,1],3,0))
+   containsNearbyAlmostDuplicate([2147483647,-1,2147483647],1,2147483647)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+html {
+  background-color: #eff0f4;
+}
+a {
+  text-decoration: none;
+}
+.w,
+.topbar,
+.banner,
+.menu,
+div.course-list {
+  width: 92.38vw;
+  margin: auto;
+}
+.topbar {
+  display: flex;
+  height: 23.33vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar a {
+  color: #24253d;
+  font-size: 8vw;
+}
+.topbar a i {
+  color: #999;
+  font-size: 4.5vw;
+}
+.banner {
+  height: 36.97vw;
+}
+.banner img {
+  height: 100%;
+}
+/*设置中间菜单的高度*/
+.menu {
+  height: 43.8vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.menu a {
+  width: 43.59vw;
+  height: 13.86vw;
+  border-radius: 5%;
+  text-align: center;
+  line-height: 13.86vw;
+  color: white;
+  font-size: 4.6vw;
+}
+.menu a i {
+  margin-right: 1.6vw;
+}
+.menu a:first-child {
+  background-color: #f97053;
+}
+.menu a:nth-child(2) {
+  background-color: #c962ff;
+}
+.menu a:nth-child(3) {
+  background-color: #ff3971;
+}
+.menu a:nth-child(4) {
+  background-color: #1caafd;
+}
+div.course-list {
+  height: 55.5vw;
+  margin-top: 6.93vw;
+}
+div.course-list .title {
+  display: flex;
+  border-left: 1px solid #0011ff;
+  padding: 0 3vw;
+  justify-content: space-between;
+  font-size: 5.6vw;
+}
+div.course-list .title a {
+  color: #656565;
+}
+div.course-list .item-list {
+  margin-top: 6.13vw;
+  display: flex;
+  justify-content: space-between;
+  width: 184.76vw;
+  overflow: auto;
+}
+div.course-list .item-list .item {
+  background-color: white;
+  border-radius: 5%;
+  height: 36.8vw;
+  width: 36.92vw;
+  padding: 3.2vw;
+}
+div.course-list .item-list .item .cover img {
+  height: 20.93vw;
+}
+div.course-list .item-list .item .course-title {
+  text-align: center;
+  margin-top: 3.33vw;
+  font-size: 3.5vw;
+}
+div.course-list .item-list .item .user-info {
+  display: flex;
+  margin-top: 3.33vw;
+}
+div.course-list .item-list .item .user-info img {
+  height: 5.6vw;
+}
+div.course-list .item-list .item .user-info .nickname {
+  line-height: 5.6vw;
+  margin-left: 3vw;
+  font-size: 2vw;
+}
+/*# sourceMappingURL=./style.css.map */

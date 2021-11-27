@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			   假如年利率为5%,试求从1000块增长到5000块需要多少年 
+			 */
+			var i = 0,money = 1000;
+			while(money<=5000){
+				money+=money*0.05;
+				i+=1
+				document.write(money+"<br>")
+			}
+			document.write("i = "+i)
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

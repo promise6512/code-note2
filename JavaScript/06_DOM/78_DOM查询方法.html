@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+           /* 
+                document.documentElement保存根标签(html标签)
+                document中有一个属性body,它保存的是body的引用
+                  document.body
+                document.all 获取所有的元素
+                     等价于 document.getElementsByTagName('**')
+                
+                根据元素的class属性值查询一组元素节点对象
+                    document.getElementsByClassName
+                    但是IE8及以下不支持
+            */
+
+            /* 
+               document.querySelector()
+                   -非常强大!
+                   -需要一个选择器的字符串作为参数 可以根据css选择器来查询对象
+                   -兼容IE8及以下
+                   -但是只会返回第一个满足的元素
+
+                document.querySelectorAll()
+                    用法和document.querySelector()一样
+                    会把符合条件的元素封装到数组上了
+                    及时符合条件的元素只有一个 也会返回数组
+            */
+          /*  var body = document.body;
+           console.log(body);
+           
+           var all = document.all;
+           console.log(all); */
+           var box1 = document.getElementsByClassName('box1');
+           console.log(box1);
+
+           var box1Div = document.querySelector(".box1 div");
+           console.log(box1Div);
+           
+           var box1Divs = document.querySelectorAll('.box1 div')
+           console.log(box1Divs)
+        }
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div>2</div>
+    <div class="box1">
+        <div>4</div>
+    </div>
+</body>
+</html>

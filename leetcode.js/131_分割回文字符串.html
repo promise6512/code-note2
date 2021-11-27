@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var partition = function (s) {
+      let len = s.length;
+      let dp = new Array(len).fill(0).map(() => new Array(len).fill(true));
+      for (let i = 0; i < len; i++) {
+        for (let j = i + 1; j < len; j++) {
+          dp[i][j] = (s[i] === s[j]) && dp[i + 1][j - 1];
+          console.log(s[i],s[j],i,j,dp)
+        }
+      }
+    // console.log(dp)
+      let res = [];
+      let tmp = [];
+      const dfs = (i) => {
+        if (i === len) {
+          res.push([...tmp]);
+          return;
+        }
+
+        for (let j = i; j < len; j++) {
+          //是回文子串
+          if (dp[i][j]) {
+            tmp.push(s.slice(i, j + 1));
+            dfs(j + 1);
+            tmp.pop()
+          }
+        }
+      }
+      dfs(0);
+      return res;
+    };
+    //debugger
+    partition("abbab")
+  </script>
+</body>
+
+</html>

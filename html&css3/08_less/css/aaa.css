@@ -1,0 +1,9 @@
+.block {
+  color: red;
+  color: blue;
+}
+.block .inner {
+  background-color: orange;
+  color: orange;
+}
+/*# sourceMappingURL=./aaa.css.map */

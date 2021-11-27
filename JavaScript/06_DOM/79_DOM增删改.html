@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../html&css3/bilibili/resetcss.css">
+    <style>
+        #total{
+            border: 1px black solid;
+            width: 350px;
+            height: 150px;
+
+        }
+        #city{
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #city li{
+            background-color: #bfa;
+            padding: 5px;
+            margin: 0 5px;
+            border: 1px black solid;
+
+        }
+    </style>
+    <script>
+        /* 
+           document.creatElement()
+                可以用于创建一个元素对象
+                它需要一个标签名作为参数 将会根据该标签名创建元素节点对象
+                并将创建好的对象作为返回值返回
+            document.creatTextNode()
+                可以用于创建一个文本节点对象
+                需要一个文本内容作为参数
+            appendChild()
+                 可以向一个父节点中添加一个新的子节点
+            insertBefore()
+                 在指定的子节点前面插入新的子节点
+                 语法:
+                    parentNode.insertBefore(childNode,newNode)
+            replaceChild()
+                替换子节点
+                syntax:
+                    parentNode.replaceChild(childNode,newNode)
+            removeChild()
+                  parentNode.removeChild(newNode)
+
+        */
+        window.onload = function(){
+            var city,li,gzText,bj;
+            
+            /* 
+              获取操作所需节点
+            */
+            function getElement(){
+                 li = document.createElement('li');
+                 gztext = document.createTextNode('广州');
+                 li.appendChild(gztext);
+                 city = document.getElementById('city');
+                 bj = document.getElementById('bj');
+            }
+
+            function myClick(idStr,fun){
+                btn = document.getElementById(idStr);
+                btn.onclick = fun;
+            };
+
+            myClick('btn01',function(){
+                getElement()
+                city.appendChild(li);
+                //alert(li);
+
+            });
+
+            myClick('btn02',function(){
+                getElement();
+                city.insertBefore(li,bj);
+            });
+
+            myClick('btn03',function(){
+                getElement();
+                //city.replaceChild(li,bj);
+                bj.parentNode.replaceChild(li,bj);
+            });
+            
+            myClick('btn04',function(){
+                getElement();
+                //city.removeChild(bj);
+                bj.parentNode.removeChild(bj);
+            });
+
+            myClick('btn06',function(){
+                getElement();
+                bj.innerHTML = 'aaaA';
+            })
+
+            myClick('btn07',function(){
+                //向city中添加广州
+                getElement();
+                //city.innerHTML += '<li>广州</li>';
+                
+                /* 
+                  使用innerHTML也可以完成DOM的增删改的相关操作
+                  一般我们会两种方式结合使用
+                */
+                li.innerHTML = '广州';
+                city.appendChild(li)
+            })
+        };
+
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>
+                你喜欢哪个城市?
+            </p>
+
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="btnList">
+        <div><button id="btn01">创建一个"广州"节点,添加到#city下</button></div>
+        <div><button id="btn02">将"广州"节点插入到#bj前面</button></div>
+        <div><button id="btn03">使用"广州"节点替换#bj节点</button></div>
+        <div><button id="btn04">删除#bj节点</button></div>
+        <div><button id="btn05">读取#city内的HTML代码</button></div>
+        <div><button id="btn06">设置#bj内的HTML代码</button></div>
+        <div><button id="btn07">创建一个"广州"节点,添加到#city下</button></div>
+    </div>
+</body>
+</html>

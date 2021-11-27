@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        垂直外边距的重叠(折叠)
+            -相邻垂直方向的外边距会发生重叠现象
+            -兄弟元素
+                 -兄弟元素之间的相邻垂直外边距会取两者之间的较大值(两者都是正值)
+                 -特殊情况：
+                      如果相邻外边距一正一负，则取二者之和      
+                      如果二者都为负值，则取两者中绝对值较大的
+                
+                -兄弟元素之间的重叠对开发有利，不需要处理
+            -父子元素
+                 - 父子元素之间的相邻外边距，子元素会传递给父元素(上外边距)
+                 -  
+        */          
+    </style>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function movingCount(threshold, rows, cols) {
+        // write code here
+        const getSum = (num) => {
+          let ten = Math.floor(num / 10);
+          let single = num % 10;
+          return ten + single;
+        };
+
+        let arrived = new Array(rows)
+          .fill(0)
+          .map(() => new Array(cols).fill(false));
+
+        let res = 0;
+        let range = 0;
+        const dfs = (i, j) => {
+          if (
+            i < 0 ||
+            i >= rows ||
+            j < 0 ||
+            j >= cols ||
+            getSum(i) + getSum(j) > threshold ||
+            arrived[i][j]
+          ) {
+            res = Math.max(res, range);
+            return;
+          }
+          arrived[i][j] = true;
+          range++;
+          console.log(i, j, range);
+          dfs(i + 1, j);
+          dfs(i - 1, j);
+          dfs(i, j - 1);
+          dfs(i, j + 1);
+          arrived[i][j] = false;
+          range--;
+        };
+        dfs(0, 0);
+        return res;
+      }
+      debugger;
+      movingCount(5, 10, 10);
+    </script>
+  </body>
+</html>

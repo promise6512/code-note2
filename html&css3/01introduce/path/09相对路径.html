@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        当我们需要跳转到一个服务器内部的页面时，我们一般都会使用相对路径
+             相对路径都会使用.或..开头
+                ./
+                ../
+            ./可以省略不写，如果不写./也不写../ 则相对于写了./
+
+            ./表示当前文件所在的目录
+                -在这里当前页面就是 09.相对路径.html
+                ./在这里就等于path
+            
+                ../表示当前文件的上一级目录
+    -->
+    <a href="../07列表.html">跳转至07列表</a>
+    <br>
+    <a href="./inner/target.html">跳转target</a>
+</body>
+</html>

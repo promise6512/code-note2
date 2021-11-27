@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            test()      直接调用
+            new test()  方法调用
+            obj.test()  构造函数调用
+            test.call/apply(obj)  让一个函数临时成为为指定对象的方法
+                 
+        */
+        var obj = {
+
+        };
+        function test(){
+            console.log(123)
+        }
+        test.call(obj)
+       console.log(obj)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

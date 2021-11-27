@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container{
+        width: 400px;
+        height: 200px;
+        background-color: red;
+        display: flex;
+        align-content: space-between;
+
+      }
+      .item {
+        width: 300px;
+        height: 100px;
+      }
+      .item1{
+        background-color: green;
+        flex-shrink: 1;
+      }
+      .item2{
+        background-color: orange;
+        flex-shrink: 2;
+      }
+      .item3{
+        background-color: blue;
+        flex-shrink: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h4>align-content: center;</h4> -->
+    <div class="container">
+      <div class="item1 item">flex-shrink: 1;</div>
+      <div class="item2 item">flex-shrink: 2;</div>
+      <div class="item3 item">flex-shrink: 3;</div>
+    </div>
+  </body>
+</html>

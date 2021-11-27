@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+		       解析器的调用函数每次都会向函数内部传递进一个隐含的参数	 
+			      这个隐含的参数就是this，this指向的是一个对象
+				  这个对象我们称为函数执行的 上下文对象
+				  根据函数调用方式的不同 this会指向不同的对象
+				      1.函数的形式调用时 this永远都是window
+					  2.以方法的形式调用时  this指向对象
+					  3.在构造函数中用this引用新建的对象
+					  4.在事件的响应函数中,this指向响应函数绑定的对象(应用见全选练习)
+			 */
+			function fun(){
+				console.log(this.name)
+			}
+			obj = {
+				name:"孙悟空",
+				gender:'男',
+				age:'18',
+				address:'花果山',
+				getName:fun,
+			}
+			var name='我是全局的name'
+			fun()           // 函数形式调用 this指向window
+			obj.getName()        // 方法形式调用 this指向obj
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

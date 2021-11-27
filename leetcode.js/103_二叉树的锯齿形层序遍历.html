@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    function TreeNode(val, left, right) {
+      this.val = (val === undefined ? 0 : val)
+      this.left = (left === undefined ? null : left)
+      this.right = (right === undefined ? null : right)
+    }
+
+    var zigzagLevelOrder = function (root) {
+      let queue = [];
+      queue.push(root)
+      let res = [];
+      let isLeft = true;
+      while (queue.length > 0) {
+        let tmp = [];
+        //console.log(queue.length)
+        let len = queue.length
+        for (let i = 0; i < len; i++) {
+          let treeNode = queue.pop();
+          if (treeNode) {
+            tmp.push(treeNode.val);
+            if (isLeft) {
+              queue.unshift(treeNode.left);
+              queue.unshift(treeNode.right);
+            } else {
+              queue.unshift(treeNode.right);
+              queue.unshift(treeNode.left);
+            }
+          }
+        }
+        //console.log(tmp, res)
+        if (tmp.length > 0) {
+          res.push([...tmp]);
+        }
+        isLeft = !isLeft;
+      }
+      return res;
+    };
+    let treeNode = new TreeNode(
+      3,
+      new TreeNode(9),
+      new TreeNode(
+        20,
+        new TreeNode(15),
+        new TreeNode(7),
+      ),
+    );
+   // debugger
+    console.log(zigzagLevelOrder(treeNode));
+  </script>
+</body>
+
+</html>

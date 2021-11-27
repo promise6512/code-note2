@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name , age){
+				this.name = name;
+				this.age = age;
+			}
+			var per = new Person('孙悟空',18);
+			var per1 = new Person('孙悟空1',20);
+			var per2 = new Person('孙悟空2',21);
+			var per3 = new Person('孙悟空3',22);
+			var per4 = new Person('孙悟空4',13);
+			var per5 = new Person('孙悟空5',24);
+			var per6 = new Person('孙悟空6',100);
+			var per7 = new Person('孙悟空7',2);
+			var arr = [per,per1,per2,per3,per4,per5,per6,per7];
+			var arr1 = [];
+			function getAdult(arr){	
+	/* 			var arr1=[]; */
+				for(var i =0; i < arr.length; i++){
+					if(arr[i].age >= 22){
+						arr1.push(arr[i])
+					}
+				}
+			}
+			getAdult(arr);
+			console.log(arr1)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

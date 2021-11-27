@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var permuteUnique = function (nums) {
+      let res = [];
+      let len = nums.length;
+      nums.sort((a, b) => a - b)
+      const used = new Array(len).fill(false);
+      const backtrack = (perm = []) => {
+        //已经对nums中所有元素进行排列
+        if (perm.length === len) {
+          res.push([...perm]);
+          return
+        }
+        for (let i = 0; i < len; i++) {
+          if (used[i]) continue; //已经使用过
+          if (i > 0 && nums[i] === nums[i - 1] && !used[i - 1]) continue; //去除重复的排列
+          perm.push(nums[i]);
+          used[i] = true;
+          backtrack(perm)
+          perm.pop(nums[i]);
+          used[i] = false;
+        }
+      }
+      backtrack()
+      return res;
+    };
+   // debugger
+    console.log(permuteUnique([1,1,2]))
+  </script>
+</body>
+
+</html>

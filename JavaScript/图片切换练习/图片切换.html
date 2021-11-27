@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            margin: 0 auto;
+            width: 500px;
+            background-color: #bfa;
+            padding: 10px;
+            /* 设置文本居中 */
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var img = document.getElementsByTagName('img')[0];
+            var imgArr = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"];
+            /* 当前的图片索引 */
+            var index = 0;
+
+             /* 设置提示文字 */
+            var infoArr = ['一共五张图片,当前第一张','一共五张图片,当前第二张','一共五张图片,当前第三张','一共五张图片,当前第四张','一共五张图片,当前第五张']
+            var info = document.getElementById('info');
+
+            prev.onclick = function () {
+                index = (index + 4) % 5;
+                img.src = imgArr[index];
+                info.innerHTML = infoArr[index]
+
+            };
+            next.onclick = function () {
+                index = (index + 1) % 5;
+                img.src = imgArr[index];
+                info.innerHTML = infoArr[index]
+            };
+           
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+        <p id='info'>一共五张图片,当前第一张</p>
+        <img src="./img/1.jpg">
+        <button id='prev'>上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+
+</html>

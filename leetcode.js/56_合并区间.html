@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * @param {number[][]} intervals
+ * @return {number[][]}
+ */
+        var merge = function (intervals) {
+            intervals.sort((a, b) => a[0] - b[0]);
+            let i = 0;
+            while (i < intervals.length - 1) {
+               // console.log(i,intervals)
+                if (intervals[i][1] < intervals[i + 1][0]) {
+                    i++;
+                } else {
+                  //  console.log(intervals)
+                    let former = intervals[i][1];
+                    let later = intervals[i+1][1]
+                    let left = intervals[i][0];
+                    let right = former > later ? former : later;
+                    intervals.splice(i, 2, [left, right]);
+                }
+            }
+            return intervals;
+        };
+        let intervals = [[1,3],[2,6],[8,10],[15,18]];
+        merge(intervals);
+        console.log(intervals)
+    </script>
+</body>
+
+</html>

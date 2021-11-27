@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var compress = function (chars) {
+        let s = "";
+        let pre = "";
+        let count = 0;
+
+        for (let char of chars) {
+          if (char !== pre) {
+            s += pre;
+            pre = char;
+            if (count > 1) s += count;
+            count = 1
+          } else {
+            count++;
+          }
+        }
+
+        s += chars[chars.length - 1];
+        if (count > 1) s += count;
+
+        console.log(s);
+
+        return s.length;
+      };
+   //   debugger
+      compress(["a","a","b","b","c","c","c"])
+    </script>
+  </body>
+</html>

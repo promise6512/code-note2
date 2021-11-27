@@ -1,0 +1,30 @@
+/*
+   多行注释 注释中的内容会被解析到css中
+*/
+.box1 {
+  background-color: red;
+}
+.box1 .box2 {
+  background-color: #ff0;
+}
+.box1 .box3 {
+  background-color: orange;
+}
+/*
+  变量的语法:@变量名
+  作为类名或者一部分值使用时，必须以@{变量名}的形式使用
+  变量发生重名时，优先使用比较近的变量
+  $属性名  可以引用其他属性名的属性值
+*/
+.box5 {
+  width: 100px;
+  color: #bfa;
+}
+.box6 {
+  height: 100px;
+  background-image: url('../../exercise/素材/02.jpg');
+}
+.div {
+  width: 100px;
+  height: 100px;
+}

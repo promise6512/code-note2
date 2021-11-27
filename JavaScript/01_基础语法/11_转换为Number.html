@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			    将其他数据类型转换为Number
+				    转换方式一:
+				       使用Number()函数
+					   字符串--> 数字
+					   1.如果纯数字的字符串，则将其转换为数字
+			  		   2.如果字符串有非数字内容.转换为NaN
+					   3.如果字符串是空串或者全是空格 则转换为0
+					  
+					   布尔--> 数字
+					   true 1
+					   false 0
+					  
+					   Null-->Number 0
+					  
+					   undefined --> Number NaN
+					
+					转换方式二:
+					      -这种方式专门用来对付字符串
+						  -parseInt()   把一个字符串转换为一个整数，可以取整
+						  -parseFloat() 把一个字符串转换为浮点数
+						  对非string使用时，会先转换成string 然后再操作
+			 */
+			var a = '13.22453a2a3px';
+			a=parseFloat(a);
+			console.log(a)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

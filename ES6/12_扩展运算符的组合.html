@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        //数组的合并
+        let avengers = ['钢铁侠','美国队长','雷神'];
+        let xman = ['x教授','金刚狼','野兽']
+        let marvel = [...avengers,...xman] 
+        console.log(marvel)
+
+        //数组的克隆
+        const avengers2 = [...avengers]
+        console.log(avengers2)
+
+        //伪数组转换为数组
+        const divs = document.querySelectorAll('div')
+        console.log(divs)
+        const divarr = [...divs]
+        console.log(divarr)
+    </script>
+</body>
+</html>

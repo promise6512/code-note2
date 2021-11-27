@@ -1,0 +1,65 @@
+//为box1设置一个hover
+//表示外层的父元素
+.box1{
+    .box2{
+        color: red;
+    }
+    >.box3{
+        color: red;
+    }
+    &:hover{
+        color: blue;
+    }
+}
+/*extend()对当前选择器扩展指定选择器的样式*/
+.p1{
+    width: 100px;
+    height: 200px;
+}
+.p2:extend(.p1){
+    color: red;
+}
+/*将p1样式到p3*/
+.p3{
+    .p1()
+}
+/*使用类选择器时可以在后面加()，使其变成mixins*/
+.p4(){
+    width: 100px;
+    height: 100px;
+}
+.p5{
+    .p4;
+    color:red;
+}
+/*混合函数中可以直接设置变量*/
+.test(@w:100px,@h,@color){
+    width: @w;
+    height: @h;
+    color: @color;
+}
+.box4{
+    /*顺序传递*/
+    .test(200px,300px,#bfa);
+}
+.box5{
+    /*按属性名传递*/
+    .test(@w:100px,@color:#bfa,@h:200px)
+}
+.box6{
+    .test(@h:500px,@color:#bfa);
+}
+/*average 对颜色取平均*/
+span{
+    font-size: average(red,yellow);
+}
+.box2{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+}
+.box2{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+}

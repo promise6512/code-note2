@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明常量
+        const SCHOOL = 'zju';
+       
+        //1.一定要赋值初始
+        //const A
+      
+        //2.一般常量使用大写(潜规则)
+        
+        //3.常量不能修改
+        //Const SCHOOL = 'tsu'
+
+        //4.只在块级作用域有效
+        {
+            const COLLEAGE = 'CEE'
+        }
+        //console.log(COLLEAGE)
+
+        //5.对于数组和对象元素的修改 不算做对常量的修改 不会报错
+        const CITY = ['杭州', '宁波', '温州'];
+        CITY.push('金华') //不会报错 因为const指向的地址值没有改变
+
+    </script>
+</body>
+</html>

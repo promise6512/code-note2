@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        obj = {
+
+        }
+        //obj = new Object()
+        console.log(obj.__proto__ === Object.prototype) //--->true
+
+        obj2 = {
+            name : 'zy'
+        }
+        console.log(obj.__proto__ === obj2.__proto__)
+        console.log(obj.__proto__.__proto__)
+        
+        
+        function fun(){
+
+        }
+        //var fun = new Function()
+        /* 
+          Function 是一个类/构造函数
+            fun是Function的实例  所以 fun.__proto__ 即Function.prototype
+            
+        */
+        console.log(fun.__proto__ === Function.prototype) //--->true
+
+        //所以函数的隐式原型相同
+        function fun2(){
+
+        }
+        //var fun2 = new Function()
+        console.log(fun.__proto__ === fun2.__proto__); //--->true
+        
+        //Function是自己的实例
+        console.log(Function.__proto__ == Function.prototype) //--->true
+
+        console.log(Object.__proto__ === Function.prototype) //-->true
+
+        /* console.log(Function.__proto__.__proto__.__proto__)
+
+        console.log(Object.__proto__ .__proto__.__proto__)
+
+        console.log(fun2.__proto__ .__proto__.__proto__) */
+
+        console.log(Function.__proto__)
+        
+        console.log(Object.prototype,'---')
+        
+        console.log(fun.prototype)
+
+        console.log(obj.__proto__)
+
+        obj2 = new fun()
+        console.log(obj2.__proto__)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字符串和正则相关的方法</title>
+		<script type="text/javascript">
+			var str = '1a2b3c4d5e6F';
+			/* 
+			   split()
+			       -方法中可以传递一个正则表达式作为参数 这样方法会根据正则表达式去拆分字符串
+			   search()
+			       -可以搜索字符串中是否含有指定内容
+				match()
+				   -根据正则表达式 从一个字符串中将符合条件的内容提取出来
+				   -默认情况下只会遭到第一个符合要求的内容 找到以后就会停止检索
+				       可以设置全局匹配模式 就会匹配所有内容 以数组形式返回
+			    replace()
+				   -可以将字符串中的指定内容替换成新的内容
+				   -参数:
+				       1.被替换的内容
+					   2.新的内容
+			 */
+			
+			//根据任意字母拆分
+			var result = str.split(/[a-z]/);
+			console.log(result);
+			
+			result = str.search(/[cdb]/);
+			console.log(result);
+			
+			result = str.match(/[a-z]/ig);
+			console.log(result);
+			console.log(Array.isArray(result));
+			
+			result = str.replace(/[a-z]/ig,'@_@');
+			console.log(result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

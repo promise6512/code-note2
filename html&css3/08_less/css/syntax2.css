@@ -1,0 +1,62 @@
+.box1 .box2 {
+  color: red;
+}
+.box1 > .box3 {
+  color: red;
+}
+.box1:hover {
+  color: blue;
+}
+/*extend()对当前选择器扩展指定选择器的样式*/
+.p1,
+.p2 {
+  width: 100px;
+  height: 200px;
+}
+.p2 {
+  color: red;
+}
+/*将p1样式到p3*/
+.p3 {
+  width: 100px;
+  height: 200px;
+}
+/*使用类选择器时可以在后面加()，使其变成mixins*/
+.p5 {
+  width: 100px;
+  height: 100px;
+  color: red;
+}
+/*混合函数中可以直接设置变量*/
+.box4 {
+  /*顺序传递*/
+  width: 200px;
+  height: 300px;
+  color: #bfa;
+}
+.box5 {
+  /*按属性名传递*/
+  width: 100px;
+  height: 200px;
+  color: #bfa;
+}
+.box6 {
+  width: 100px;
+  height: 500px;
+  color: #bfa;
+}
+/*average 对颜色取平均*/
+span {
+  font-size: #ff8000;
+}
+.box2 {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+}
+.box2 {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+}
+/*# sourceMappingURL=./syntax2.css.map */

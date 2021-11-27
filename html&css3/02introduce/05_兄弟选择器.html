@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+           兄弟选择器
+               选中下一个兄弟
+                   语法：前一个+后一个
+               选择下面所有的兄弟
+                   语法：兄~弟
+
+        */
+        p+span{
+            color: blueviolet;
+        }
+        p~span{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        父元素
+        子元素
+        祖先元素
+        后代元素
+        兄弟元素
+    -->
+    <div class="box">
+        我是一个div
+        <p>
+            我是div中的p元素
+            <span>我是p中的span</span>
+        </p>
+        <span>我是div.box中的span，是p下一个兄弟元素</span>
+        <span>我也是</span>
+        <span>我也是</span>
+        <span>我也是</span>
+        <span>我也是</span>
+    </div>
+    <div class="abc">
+        <span>我是div中的span元素</span>
+    </div>
+
+
+</body>
+</html>

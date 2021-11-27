@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /* 
+              每点击一次按钮 就会开启一个定时器
+                  点击多次就会开启多次 会导致图片切换速度过快 
+                  并且我们只能关闭最后一次定时器
+
+            */
+            
+            var img = document.getElementsByTagName('img')[0]
+            //   alert(img)
+            var imgArry = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"]
+            var currentImg = 0;
+            var btn01 = document.getElementById('btn01');
+            var btn02 = document.getElementById('btn02');
+            //定义一个变量 用来保存定时器的标识
+            var timer;
+            btn01.onclick = function () {
+                window.clearInterval(timer);
+                timer = window.setInterval(function () {
+                   // window.clearInterval(timer);
+                    img.src = imgArry[currentImg];
+                    currentImg = (currentImg + 1) % imgArry.length
+                }, 1000)
+            };
+            btn02.onclick = function() {
+               //alert(12323)
+                window.clearInterval(timer);
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <img src="./img/1.jpg" alt="">
+    <br>
+    <button id='btn01'>开始</button>
+    <button id='btn02'>结束</button>
+</body>
+
+</html>

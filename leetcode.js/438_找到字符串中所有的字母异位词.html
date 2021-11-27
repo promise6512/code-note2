@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var findAnagrams = function (s, p) {
+      //滑动窗口
+      let window = new Map();
+      //所需字符
+      let need = new Map();
+      for (let i of p) {
+        need.set(i, (need.has(i) ? need.get(i) : 0) + 1);
+      }
+      let left = 0;
+      let right = 0;
+      //已经达到要求数量的字符
+      let validStr = 0;
+      let res = [];
+      while (right < s.length) {
+        if (need.has(s[right])) {
+          window.set(s[right], (window.has(s[right]) ? window.get(s[right]) : 0) + 1)
+          if (need.get(s[right]) === window.get(s[right])) validStr++;
+        }
+     //   if (validStr === need.size) res.push(left);
+        if (right - left + 1 > p.length) {
+          if (need.has(s[left])) {
+            if (window.get(s[left]) === need.get(s[left])) {
+              validStr--;
+            }
+            window.set(s[left], window.get(s[left])-1);
+          }
+          left++
+        }
+        if (validStr === need.size) res.push(left);
+        right++;
+      }
+      return res;
+    };
+    console.log(findAnagrams("cbaebabacd", "abc"))
+  </script>
+</body>
+
+</html>

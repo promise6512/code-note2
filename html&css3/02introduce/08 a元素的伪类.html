@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        :link 用来表示没访问过的链接
+        :visited 表示访问过的链接
+        由于隐私原因 visited只能修改链接颜色
+
+        :hover 用来表示鼠标移入的状态
+        */
+        a:link{
+            color: red;
+        }
+        a:visited{
+            color: blue;
+        }
+        a:hover{
+            color: crimson;
+            font-size: large;
+        }
+        a:active{
+            color: darkgreen;
+            font-size: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        链接的状态：访问过和没访问过
+    -->
+    <a href="https://www.w3school.com.cn/cssref/css_selectors.asp">w3schoo</a>
+</body>
+</html>

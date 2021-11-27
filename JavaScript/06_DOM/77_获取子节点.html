@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../html&css3/bilibili/resetcss.css">
+    <style>
+         #total{
+             height: 500px;
+             width: 500px;
+             border: 1px solid black;
+         }
+        p{
+            line-height: 20.8px;
+            width: 400px;
+            margin: 16px 0;
+        } 
+        ul{
+            display: flex;
+            width: 400px;
+            justify-content: space-between;
+        }
+        ul li{
+            background-color: #bfa;
+            padding: 5px;
+            border: 1px solid black;
+            line-height: 20.8px;
+        }
+    </style>
+    <script>
+      /* 
+         获取元素的子节点:
+            1.getElementsTagName()
+                 方法, 返回当前节点的指定标签名的后代节点
+                  var city = document.getElementById('city');
+                  var lis = city.getElementsByTagName('li');
+            2.childNodes 
+                 属性, 表示当前节点的所有子节点
+                 会获取包括文本节点在内的所有节点
+                 标签间的空白也会当成文本节点
+                 注意:IE8及以下的浏览器不会把空白文本当成子节点
+            children属性可以获取所有子元素
+            3.firstChild 
+                 属性  表示当前节点的第一个子节点
+                 会包括空白文本
+            firstElementChild 获取第一个子元素 
+                  不兼容IE8
+            4.lastChild 
+                属性 表示当前节点的最后一个子节点
+        
+          
+            获取父节点和兄弟节点
+                1.parentNode
+                   属性, 表示当前节点的父节点
+                2.previousSibling
+                    属性, 表示当前节点的前一个兄弟节点
+                previousElementSibling
+                    获取前一个兄弟节点 不兼容IE8及以下
+                3.nextSibling
+                    属性, 表示当前节点的后一个兄弟节点
+      */
+     window.onload = function(){
+         /* 
+            定义一个函数 专门为指定元素绑定单击响应
+         */
+        function myClick(idStr, fun){
+            var btn = document.getElementById(idStr);
+            btn.onclick = fun;
+        };
+
+         var btn04 = document.getElementById('btn04');
+         btn04.onclick = function(){
+            var city = document.getElementById('city');
+            var lis = city.getElementsByTagName('li');
+            for(var i = 0; i < lis.length; i++){
+                alert(lis[i].innerHTML);
+            };
+         };
+         
+         var btn05 = document.getElementById('btn05');
+         btn05.onclick = function(){
+            var city = document.getElementById('city');
+            var cns  = city.childNodes;
+            console.log(cns);
+            var cns2 = city.children;
+            console.log(cns2);
+         };
+
+         var btn06 = document.getElementById('btn06');
+         btn06.onclick = function(){
+             var phone = document.getElementById('phone');
+             var fir = phone.firstChild;
+             alert(fir.innerHTML);
+         }
+
+        myClick('btn07',function(){
+            var bj = document.getElementById('bj');
+            var par = bj.parentNode;
+            alert(par.innerHTML);
+            alert(par.innerText);
+        });
+
+        /* 获取前一个兄弟节点 */
+        myClick('btn08',function(){
+            var android = document.getElementById('android');
+            var prev = android.previousSibling;
+            alert(prev.innerHTML);
+        });
+
+        /* 返回username的value的属性值 */
+        myClick('btn09',function(){
+            var username = document.getElementById('username');
+            alert(username.value);
+        });
+
+        myClick('btn10',function(){
+            var username = document.getElementById('username');
+            username.value = '改尼玛'
+        })
+
+        myClick('btn11',function(){
+           var bj = document.getElementById('bj');
+           alert(bj.innerHTML);
+        })
+     };
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>
+                你喜欢哪个城市?
+            </p>
+
+            <ul id="city">
+                <li id="bj"><a>北京</a></li>
+                <li id='sh'>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+
+            <br>
+            <br>
+
+            <p>
+                你喜欢哪款单机游戏?
+            </p>
+
+            <ul id="game">
+                <li id="rl">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+
+            <br />
+            <br />
+
+            <p>
+                你手机的操作系统是?
+            </p>
+
+            <ul id="phone">
+                <li>IOS</li>
+                <li id="android">Android</li><li>Windows Phone</li></ul>
+        </div>
+
+        <div class="inner">
+            gender:
+            <input class="hello" type="radio" name="gender" value="male"/>
+            Male
+            <input class="hello" type="radio" name="gender" value="female"/>
+            Female
+            <br>
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde"/>
+        </div>
+    </div>
+    <div id="btnList">
+        <div><button id="btn01">查找#bj节点</button></div>
+        <div><button id="btn02">查找所有li节点</button></div>
+        <div><button id="btn03">查找name=gender的所有节点</button></div>
+        <div><button id="btn04">查找#city下所有li节点</button></div>
+        <div><button id="btn05">返回#city的所有子节点</button></div>
+        <div><button id="btn06">返回#phone的第一个子节点</button></div>
+        <div><button id="btn07">返回#bj的父节点</button></div>
+        <div><button id="btn08">返回#android的前一个兄弟节点</button></div>
+        <div><button id="btn09">返回#username的value属性值</button></div>
+        <div><button id="btn10">设置#username的value属性值</button></div>
+        <div><button id="btn11">返回#bj的文本值</button></div>
+    </div>
+</body>
+</html>

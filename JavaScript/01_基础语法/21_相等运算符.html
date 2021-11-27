@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			    ==表示相等
+			      当时用==比较两个类型不同的值时
+				  则会自动进行类型转换，将其转换为相同的类型再比较
+				  
+				 undefined 衍生自null
+				   所以这两个值做相等判断时，会返回true
+				   
+				 NaN 不和任何值相等 包括本身
+				 
+				 可以通过isNaN()函数判断一个值是否是NaN
+				 
+				 !=表示不相等
+				 
+				 ===表示全等
+				   -和相等类似 但不会作类型转换
+				   -如果两个值类型不同直接返回false
+				   
+				 !==表示不全等
+				    不会类型转换
+				console.log(1!=='1')  //true
+			 */
+			var b=NaN;
+			console.log(isNaN(b));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

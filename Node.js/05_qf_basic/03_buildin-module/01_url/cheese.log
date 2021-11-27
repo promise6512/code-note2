@@ -1,0 +1,125 @@
+[2021-08-26T10:43:01.415] [DEBUG] cheese - URL {
+  href: 'https://www.baidu.com/path/index.html?id=2#tag=3',
+  origin: 'https://www.baidu.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/path/index.html',
+  search: '?id=2',
+  searchParams: URLSearchParams { 'id' => '2' },
+  hash: '#tag=3'
+}
+[2021-08-26T10:44:09.897] [DEBUG] cheese - URL {
+  href: 'https://www.baidu.com/path/index.html?id=2#tag=3',
+  origin: 'https://www.baidu.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/path/index.html',
+  search: '?id=2',
+  searchParams: URLSearchParams { 'id' => '2' },
+  hash: '#tag=3'
+}
+[2021-08-26T10:48:22.282] [DEBUG] cheese - URL {
+  href: 'https://www.baidu.com/path/index.html?id=2#tag=3',
+  origin: 'https://www.baidu.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/path/index.html',
+  search: '?id=2',
+  searchParams: URLSearchParams { 'id' => '2' },
+  hash: '#tag=3'
+}
+[2021-08-26T10:48:22.284] [DEBUG] cheese - https://www.baidu.com/path/index.html?id=2#tag=3
+[2021-08-26T10:53:05.460] [DEBUG] cheese - URL {
+  href: 'https://www.baidu.com/path/index.html?id=2#tag=3',
+  origin: 'https://www.baidu.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/path/index.html',
+  search: '?id=2',
+  searchParams: URLSearchParams { 'id' => '2' },
+  hash: '#tag=3'
+}
+[2021-08-26T10:53:05.463] [DEBUG] cheese - https://www.baidu.com/path/index.html?id=2#tag=3
+[2021-08-26T11:00:29.886] [DEBUG] cheese - URL {
+  href: 'https://www.baidu.com/path/index.html?id=2#tag=3',
+  origin: 'https://www.baidu.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/path/index.html',
+  search: '?id=2',
+  searchParams: URLSearchParams { 'id' => '2' },
+  hash: '#tag=3'
+}
+[2021-08-26T11:00:29.888] [DEBUG] cheese - https://www.baidu.com/path/index.html?id=2#tag=3
+[2021-08-26T11:00:29.889] [DEBUG] cheese - URLSearchParams { 'https://www.baidu.com:443/path/index.html?id' => '2#tag=3' }
+[2021-08-26T11:03:27.068] [DEBUG] cheese - URL {
+  href: 'https://www.baidu.com/path/index.html?id=2#tag=3',
+  origin: 'https://www.baidu.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/path/index.html',
+  search: '?id=2',
+  searchParams: URLSearchParams { 'id' => '2' },
+  hash: '#tag=3'
+}
+[2021-08-26T11:03:27.071] [DEBUG] cheese - https://www.baidu.com/path/index.html?id=2#tag=3
+[2021-08-26T11:03:27.071] [DEBUG] cheese - URLSearchParams { 'https://www.baidu.com:443/path/index.html?id' => '2#tag=3' }
+[2021-08-26T11:03:27.071] [DEBUG] cheese - null
+[2021-08-26T11:03:49.952] [DEBUG] cheese - URL {
+  href: 'https://www.baidu.com/path/index.html?id=2',
+  origin: 'https://www.baidu.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/path/index.html',
+  search: '?id=2',
+  searchParams: URLSearchParams { 'id' => '2' },
+  hash: ''
+}
+[2021-08-26T11:03:49.954] [DEBUG] cheese - https://www.baidu.com/path/index.html?id=2
+[2021-08-26T11:03:49.954] [DEBUG] cheese - URLSearchParams { 'https://www.baidu.com:443/path/index.html?id' => '2' }
+[2021-08-26T11:03:49.954] [DEBUG] cheese - null
+[2021-08-26T11:08:21.257] [DEBUG] cheese - URL {
+  href: 'https://www.baidu.com/path/index.html?id=2',
+  origin: 'https://www.baidu.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/path/index.html',
+  search: '?id=2',
+  searchParams: URLSearchParams { 'id' => '2' },
+  hash: ''
+}
+[2021-08-26T11:08:21.260] [DEBUG] cheese - https://www.baidu.com/path/index.html?id=2
+[2021-08-26T11:08:21.260] [DEBUG] cheese - URLSearchParams { 'id' => '2' }
+[2021-08-26T11:08:21.260] [DEBUG] cheese - 2

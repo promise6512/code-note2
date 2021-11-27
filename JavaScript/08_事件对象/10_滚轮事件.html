@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        body{
+            height: 1000px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /* 
+               onmousewheel 鼠标滚轮滚动的事件 会在滚动时触发
+                    但是火狐不支持该属性
+                在火狐中需要使用DOMMouseScroll
+                    该事件需要用addEventListerner()调用
+                event.wheelDelta
+                    可以获取鼠标滚轮滚动的方向
+                    向上滚 150
+                    向下滚 -150
+                    wheelDelta这个值我们只看大小不看正负
+                    wheelDelta 在火狐中不支持
+                    火狐中使用event.detail获取滚动方向
+                        向上 -3
+                        向下 +3
+
+            */
+            var box1 = document.getElementById('box1');
+            box1.onmousewheel = function(event){
+                if(event.wheelDelta > 0 || event.detail < 0){
+                    //向上滚 div变短
+                    box1.style.height = box1.clientHeight - 10 + 'px';
+                }else{
+                    //向下滚 div变长
+                    box1.style.height = box1.clientHeight + 10 + 'px';
+                }
+                // return false 可以消除浏览器默认行为
+               return false
+                // 使用addEventListener()方法绑定响应函数 取消默认样式不能使用return false
+                // 需要使用event.preventDefault() 但是IE8不支持这货
+                event.preventDefault||event.preventDefault()
+            }
+             //bind用于兼容火狐 
+            bind(box1,'DOMMouseScroll',box1.onmousewheel)
+           /*  box1.onwheel = function(event){
+                alert(13)
+            } */
+            function bind(obj , eventStr , callback){
+                 if(obj.addEventListener){
+                     obj.addEventListener(eventStr,callback,false);
+                 }else{
+                     obj.attachEvent('on'+eventStr,function(){
+                         callback.call(obj);
+                     })
+                 }
+           }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

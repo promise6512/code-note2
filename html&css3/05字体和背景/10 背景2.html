@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+              background-clip 设置背景的范围
+                 可选值:
+                     border-box 默认值 背景会出现在边框的下面
+                     padding-box 背景只出现在内容区和内边距
+                     content-box  背景只出现在内容区
+              background-origin 背景图片的偏移量计算原点
+                     padding-box 默认值 background-position从内边距开始计算
+                     content-box 背景图片的偏移量从内容区计算
+                     border-box  背景图片的偏移量从边框处开始计算
+              background-size 设置图片的大小
+                     第一个值宽
+                     第二个值高
+                        如果只写一个 则第二个值默认
+                    cover 铺满但元素比例不变
+                    contain 图片比例不变，将图片在元素中完整显示
+              background-attachment 背景图片是否跟随元素移动
+                    可选值:
+                       scroll 默认值 背景图片会跟随元素移动
+                       fixed  背景图片固定在页面中，不会跟随移动
+                          
+        */
+        .box1{
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+            background-image: url('./exercise/素材/01.jpg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            border: 10px red double;
+            padding: 50px;
+            background-clip:content-box;
+            background-origin: content-box;
+            background-size:contain ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

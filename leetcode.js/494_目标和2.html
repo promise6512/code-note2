@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //动态规划-->空间优化
+        /**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var findTargetSumWays = function(nums, target) {
+    let sum = nums.reduce((acc,cur)=>acc+cur,0);
+    if(target > sum){
+        return 0;
+    }
+    if((target+sum)%2){
+        return 0;
+    }
+    let n = (target+sum)/2 + 1;
+    let m = nums.length + 1;
+    let dp = new Array(n).fill(0)
+    dp[0] = 1;
+    for(let i = 1;i < m;i++){
+        for(let j = n-1;j >= 0;j--){
+            if(j >= nums[i-1]){
+                dp[j] = dp[j] + dp[j-nums[i-1]]
+            }else{
+                break;
+            }
+        }
+    }
+    return dp[n-1];
+};
+    </script>
+</body>
+</html>

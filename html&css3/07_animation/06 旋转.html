@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            通过旋转可以使元素沿着x y或z旋转指定的角度
+                rotateX()
+                rotateY()
+                rotateZ()
+                   deg 表示度数
+                   turn 表示圈数
+            backface-visibility:hidden 可以设置背面不可见
+         */
+         /* 设置当前网页的视距 */
+         html{
+             perspective: 800px;
+         }
+         body{
+             border: 10px red solid;
+         }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 200px auto;     
+        }
+        body:hover .box1{
+            transform: rotateY(100deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

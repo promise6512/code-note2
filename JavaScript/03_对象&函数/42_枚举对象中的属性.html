@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var obj={
+				name:'孙悟空',
+				age:18,
+				gender:'男',
+				address:'花果山'
+			};
+			// for..in语句
+			  /* 
+			    语法:
+				   for(var 变量 in 对象){
+				   }
+				   对象中有几个属性就会执行几次
+				     每次执行时 会将对象中的一个属性的名字赋值给变量
+			  */
+			for(var n in obj){
+				console.log('属性名:'+n+'  属性值:'+obj[n])
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

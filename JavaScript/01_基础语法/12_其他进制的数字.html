@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 
+			   以0x开头为16进制数
+				
+			   以0开头表示8进制
+			   
+			   以0b开头表示2进制 兼容性比较差
+			   
+			   字符串'070' 有些浏览器会当成8进制解析 有些浏览器会当成10进制解析
+			   
+			   解决方法
+			   a = '070';
+			   a = parseInt(a,10)
+				
+			 */
+			var a = '070';
+			a=parseInt(a,10)
+			console.log(a);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

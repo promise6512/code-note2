@@ -1,0 +1,270 @@
+/* topbar背景图 */
+.topbar-wrapper{
+    height: 155px;
+    background-image: url("./素材/背景.png");
+}
+.topbar-left{
+    float: left;
+    margin-left: 18px;
+    margin-top: 14px;
+}
+.topbar-left li{
+    float: left;
+    margin: 0 6px;
+}
+.topbar-left li a{
+    color: black;
+
+}
+/* 设置下拉小三角行样式 */
+.topbar-wrapper .app{
+    position: relative;
+}
+.topbar-wrapper .app .triangle{
+    border: 7px solid transparent;
+    width: 0;
+    border-top: none;
+    border-bottom: 7px solid white;
+    position: absolute;
+    top:25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+/* 下拉二维码*/
+.topbar-wrapper .app .QR-code{
+    position: absolute;
+    top: 32px;
+    height: 150px;
+    left: -75px;
+    display: none;
+
+}
+.topbar-wrapper .app .QR-code img{
+    height: 150px;
+    vertical-align: top;
+}
+.topbar-wrapper .app a:hover ~.triangle,
+.topbar-wrapper .app a:hover ~.QR-code{
+    display: block;
+}
+/* 设置搜索框样式 */
+.search-wrapper{
+    float: left;
+}
+.search-wrapper .inp{
+    margin: 0;
+    padding:0;
+    border: 0;
+    margin-top: 10px;
+    margin-left: 14px;
+    height: 34px;
+    width: 411.6px;
+    padding-left: 14px;
+}
+.search-wrapper .btn{
+    height: 34px;
+    width: 36px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: rgb(189, 187, 187);
+}
+/* 设置tvman样式 */
+.topbar-wrapper .tvman{
+    height: 36px;
+    width: 36px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    position: relative;
+}
+.topbar-wrapper .tvman img{
+    border-radius:50%;
+    height: 36px;
+    position: absolute;
+    z-index: 1;
+    z-index: 101;
+}
+.topbar-wrapper .tvman:hover,
+.topbar-wrapper .tvman:hover img{
+    height: 72px;
+    width: 72px;
+}
+.topbar-wrapper .tvman:hover .tvman-dropdown{
+    display: block;
+}
+/* 设置下拉框样式 */
+.tvman .tvman-dropdown{
+   /*  border-right:50px solid rgba(0,0, 0, 0.0) ; */
+    width: 279px;
+    background-color: white;
+    position: absolute;
+    left: -103.5px;
+    top: 46px;
+    border-radius: 1%;
+    display: none;
+    z-index: 100;
+}
+/* 下拉框第一层样式 */
+div.name{
+    height:109.7px ;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   
+}
+.name .bili{
+    font-size: 18px;
+    font-weight: bold;
+}
+.name .grade{
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+}
+.name .fraction{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 14px;
+}
+/* 设置下拉框第二层样式 */
+.points{
+    display: flex;
+    padding:  14px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.points li{
+    flex: auto;
+}
+.points li div{
+    text-align: center;
+    font-size: 12px;
+}
+.points li .bold{
+    font-weight: bold;
+    font-size: 18px;
+}
+.points li:hover div{
+    color: rgb(0, 17, 255);
+}
+/* 设置下拉框第三层样式 */
+.tvman-dropdown .list{
+    margin-top: 10px;
+}
+.tvman-dropdown .list a{
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 28px;
+}
+.tvman-dropdown .list a:hover{
+   background-color: rgb(212, 211, 211);
+}
+/* 设置语言弹出层样式 */
+.list .language{
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 14px 0;
+    position: relative;
+}
+.list .language i{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 14px;
+    height: 14px;
+}
+/* 设置(简体中文，繁体中文)框的样式 */
+.list .language-list{
+    position: absolute;
+    top: 0;
+    left:279px ;
+    padding: 8px 0;
+    width: 200px;
+    box-shadow: 0 0 5px rgb(126, 123, 123);
+    display: none;
+    
+}
+.list .language-list a{
+    padding-left:15px ;
+}
+.list .language a:hover~.language-list{
+    display: block;
+}
+/* 设置头部样式 */
+.header{
+    width: 1191px;
+    height: 109px;
+    /* background-color: #bfa; */
+    margin: 0 auto;
+}
+/* 设置头部导航样式 */
+.header .header-nav{
+    width: 746.4px;
+    height: 68px;
+    /* background-color: orange; */
+    margin: 20.5px auto;
+}
+.header-nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+.header-nav ul a{
+    height: 34px;
+    line-height: 34px;
+    width: 90px;
+    font-size: 14px;
+    display: block;
+}
+.header-nav ul li{
+    position: relative;
+}
+.header-nav ul li span{
+    display: inline-block;
+    width: 27px;
+    height: 12.24px;
+    font-size: 12px;
+    line-height: 12.24px;
+    background-color: rgb(0, 102, 255);
+    border-radius:10% ;
+}
+/* 设置导航条内隐藏框样式 */
+.header-nav .sub-wrapper{
+    position: absolute;
+    top: -170px;
+    width: 170px;
+    background-color: white;
+    border-radius: 3px;
+    display: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    /* background-color: coral; */
+}
+.header-nav .sub-wrapper2{
+    width: 270px;
+}
+.header-nav .sub-wrapper3{
+    width: 160px;
+ }
+.sub-wrapper .sub-item{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.sub-wrapper .sub-item a{
+    width: 100%;
+    padding: 3px 0;
+    padding-left: 10px;
+}
+.header-nav li:hover .sub-wrapper{
+    display: flex;
+}

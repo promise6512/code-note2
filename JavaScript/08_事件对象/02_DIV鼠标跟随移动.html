@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        body{
+            height: 1000px;
+        }
+        #box2{
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+
+        }
+    </style>
+    <script>
+        /*
+           div跟随鼠标移动
+         */
+        /* 
+            clientX  clientY
+               鼠标相对于当前的可见窗口的坐标
+            pageX  pageY
+               鼠标相对于当前页面的坐标
+               但是在IE8及以下不支持 如果需要兼容IE8则不可使用
+        */
+       /* 
+           chrome认为浏览器的滚动条是body的 可以通过body.scrollTop获取
+           火狐等浏览器认为浏览器的滚动条是html
+       */
+        window.onload = function(){
+            var box1 = document.getElementById('box1');
+          //  var body = document.getElementsByName('body');
+        //   console.log(body)
+            document.onmousemove = function(event){
+                event = event||window.event;
+              //  alert(event)
+                var left = event.clientX;
+                var top = event.clientY;
+               // alert(left)
+                box1.style.left = left-50 + 'px';
+                box1.style.top = top-50 +document.documentElement.scrollTop+ 'px';
+            };
+            var box2 = document.getElementById('box2');
+            box2.onmousemove = function(event){
+                event.cancelBubble = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id = 'box2'></div>
+    <div id="box1"></div>
+</body>
+</html>

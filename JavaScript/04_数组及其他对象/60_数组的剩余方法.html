@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组的剩余方法</title>
+		<script type="text/javascript">
+			/* var arr = [1,2,3];
+			var arr1 = [-1,-2,-3];
+			var arr2 = [101,102,103];
+			 */
+			/* var result = arr.concat(arr1,arr2);
+			console.log(result);
+			
+			var result1 = arr.join(' ');
+			console.log(result1); */
+			
+		//	arr.reverse();
+			/* console.log(arr);
+			console.log(arr.reverse ())
+			console.log(arr)
+			
+		/* 
+		  即使对于纯数字的数组 使用sort()排序时  也会按照Unicode编码来排序
+		     所以对数字进行排序 也可能会得到错误的结果
+			 
+	   	 可以在sort()中添加回调函数来指定排序规则
+		     回调函数中定义两个形参 
+			 浏览器会分别使用数组中的元素作为实参去调用回调函数
+			 浏览器会根据返回值来决定元素顺序
+			     如果返回一个大于0的值 则元素会交换位置
+				 如果返回一个小于0的值 则元素位置不变
+				 如果返回等于0的值  则认为两个元素相等 也不会交换位置
+		 */
+		arr = [1,5,2,6,100,3,9,10];
+		arr.sort(function(a,b){
+			console.log('a = '+a);
+			console.log('b = '+b);
+			// 数组中a在b前面
+			 return a>b;
+		})
+		console.log(arr)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

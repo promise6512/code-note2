@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var isValidSudoku = function (board) {
+      let row = new Map();
+      let col = new Map();
+      let grid = new Map();
+      for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < board[0].length; j++) {
+          if (board[i][j] !== ".") {
+            if (row.has(board[i][j], i)) return false;
+            if (col.has(board[i][j], j)) return false;
+            if (grid.has(board[i][j], Math.floor(i / 3) * 3 + Math.floor(j / 3))) return false;
+            row.set(board[i][j], i);
+            col.set(board[i][j], j);
+            grid.set(board[i][j], Math.floor(i / 3) * 3 + Math.floor(j / 3));
+          }
+        }
+      }
+      return true;
+    };
+    isValidSudoku([[".","1",".","5","2",".",".",".","."],[".",".",".",".",".","6","4","3","."],[".",".",".",".",".",".",".",".","."],["5",".",".",".",".",".","9",".","."],[".",".",".",".",".",".",".","5","."],[".",".",".","5",".",".",".",".","."],["9",".",".",".",".","3",".",".","."],[".",".","6",".",".",".",".",".","."],[".",".",".",".",".",".",".",".","."]])
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        表单
+           -使用form创建表单
+        
+        form的属性
+            action 指定表单要提交的服务器的地址
+        type指定表单类型
+    -->
+    <form action="target.html">
+        <!--文本框-->
+        账号<input type="text" name='username'>
+        
+        <!--提交按钮-->
+        <br>
+        密码<input type="password" name='password'>
+        <br>
+       
+        <!--
+            单选按钮必须指定value属性,value属性的值会提交给服务器
+            checked 默认选中
+        -->
+        单选按钮 <input type="radio" name='singlechoice' value='aaa'>
+        <input type="radio" name='singlechoice' value='bbb' checked>
+        <br>
+        多选按钮 <input type="checkbox" name='test' value='1'>
+        <input type="checkbox" name='test' value='2'>
+        <input type="checkbox" name='test' value='3'>
+        <br>
+        
+        <!--下拉列表-->
+        <select name="text" >
+            <option value="i">选项1</option>
+            <option value="ii">选项2</option checked>
+            <option value="iii">选项3</option>
+        </select>
+        <br>
+        <input type="submit" value="登录">
+    </form>
+</body>
+
+</html>

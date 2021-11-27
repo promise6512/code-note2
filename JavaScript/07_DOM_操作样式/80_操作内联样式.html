@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        /* 
+            通过JS修改元素的样式:
+               语法: 元素.style.样式名 = 样式值
+            通过style属性设置的样式都是内联样式
+               内联样式通常有较高优先级 会立即显示
+               如果原CSS样式中写了!important 则该样式由最高优先级
+                   就无法通过js来修改了
+            
+            读取css样式
+                syntax:
+                   元素.style.样式名
+                只能读取内联样式 无法读取样式表中的样式   
+        
+        */
+        window.onload = function(){
+            var box1 = document.querySelector('#box1');
+            var btn1  = document.querySelector('#btn01');
+           // alert(btn)
+            btn1.onclick = function(){
+                //修改box1的大小
+                box1.style.width = '400px';
+                box1.style.backgroundColor = 'yellow'; 
+            };
+        
+            var btn2 = document.querySelector('#btn02');
+            btn2.onclick = function(){
+                //console.log(box1.style.height);
+                alert(box1.style.backgroundColor)
+            };
+        }
+    </script>
+</head>
+<body>
+    <button id = 'btn01'>我是第一个button</button>
+    <br>
+    <br>
+    <button id = 'btn02'>我是第二个button</button>
+    <br><br>
+    <div id="box1"></div>
+</body>
+</html>
